@@ -83,6 +83,7 @@
             <Feature name="adaptive-playback"/>
             <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1080" value="30" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.avc.decoder.secure" type="video/avc" >
             <Alias name="OMX.MTK.VIDEO.DECODER.AVC.secure" />
@@ -109,6 +110,7 @@
             <Feature name="adaptive-playback"/>
             <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1080" value="30" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.heif.decoder" type="image/vnd.android.heic" >
             <Alias name="OMX.MTK.VIDEO.DECODER.HEIF" />
@@ -129,6 +131,7 @@
             <Feature name="low-latency" />
             <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1080" value="30" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.vp9.decoder" type="video/x-vnd.on2.vp9" >
             <Alias name="OMX.MTK.VIDEO.DECODER.VP9" />
@@ -142,6 +145,7 @@
             <Feature name="low-latency" />
             <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1080" value="30" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.vp9.decoder.secure" type="video/x-vnd.on2.vp9" >
             <Alias name="OMX.MTK.VIDEO.DECODER.VP9.secure" />
@@ -200,6 +204,7 @@
             <Limit name="performance-point-2560x1440" value="30" />
             <Limit name="performance-point-1920x1080" value="60" />
             <Limit name="performance-point-1280x720" value="120" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.avc.encoder.secure" type="video/avc" >
             <Limit name="size" min="128x128" max="1920x1920" />
@@ -228,6 +233,7 @@
             <Limit name="performance-point-2400x1088" value="30" />
             <Limit name="performance-point-1920x1080" value="60" />
             <Limit name="performance-point-1280x720" value="120" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.heif.encoder" type="image/vnd.android.heic" >
             <Alias name="OMX.MTK.VIDEO.ENCODER.HEIF" />
