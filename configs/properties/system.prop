@@ -22,11 +22,19 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 
-# Dalvik
+# Dexopt
 dalvik.vm.dex2oat64.enabled=true
-
-# Disable vsync for cpu rendered apps
-debug.cpurend.vsync=false
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profileAdd commentMore actions
+pm.dexopt.boot=verify
+pm.dexopt.first-boot=verify
+pm.dexopt.ab-ota=speed-profile
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
+dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.boot-dex2oat-threads=6
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.image-dex2oat-threads=6
 
 # Display
 debug.sf.enable_transaction_tracing=false
