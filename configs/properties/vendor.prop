@@ -114,6 +114,10 @@ ro.vendor.mtk_log_hide_gps=0
 # IncrementalFS
 ro.incremental.enable=yes
 
+# HWUI
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
+
 # Keymaster
 ro.vendor.keymaster_version=5.0
 
