@@ -249,7 +249,7 @@ PRODUCT_PACKAGES += \
 
 # Lineage-Specific Overlays
 PRODUCT_PACKAGES += \
-	ApertureOverlay
+	LineageApertureOverlayTarget
 
 # Linker config
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
@@ -310,6 +310,9 @@ PRODUCT_PACKAGES += \
     SystemUIResTarget \
     TetheringConfigTarget \
     WifiResTarget
+
+PRODUCT_PACKAGES += \
+    LineageApertureOverlayX6739
 
 # Permissions
 PRODUCT_COPY_FILES += \
