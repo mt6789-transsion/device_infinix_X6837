@@ -115,6 +115,7 @@ ro.vendor.mtk_log_hide_gps=0
 ro.incremental.enable=yes
 
 # HWUI
+ro.hwui.render_ahead=20
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=60
 
