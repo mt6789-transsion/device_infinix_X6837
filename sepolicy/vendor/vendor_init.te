@@ -1,1 +1,3 @@
 set_prop(vendor_init, system_mtk_camera_prop)
+
+rw_dir_file(vendor_init, sysfs_leds)
