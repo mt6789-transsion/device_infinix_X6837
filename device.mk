@@ -258,6 +258,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	ApertureOverlay
 
+# Linker config
+PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
+    $(LOCAL_PATH)/configs/linker.config.json
+
 # Media
 PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.0.vendor:64 \
