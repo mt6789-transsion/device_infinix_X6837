@@ -14,3 +14,6 @@ RUNTIME_OVERRIDE_OPENCL_MEM_TYPE    u:object_r:exported_system_prop:s0
 gf.debug.fp_vendor                  u:object_r:system_goodix_prop:s0
 gf.debug.fp_model                   u:object_r:system_goodix_prop:s0
 gf.debug.fp_serial                  u:object_r:system_goodix_prop:s0
+
+# SVN
+ro.product.svn                      u:object_r:build_prop:s0
