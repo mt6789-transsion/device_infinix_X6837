@@ -250,7 +250,8 @@ PRODUCT_PACKAGES += \
 # Lineage-Specific Overlays
 PRODUCT_PACKAGES += \
 	LineageApertureOverlayTarget \
-    LineageDialerOverlayTarget
+    LineageDialerOverlayTarget \
+    LineageSettingsOverlayTarget
 
 # Linker config
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
@@ -314,7 +315,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     LineageApertureOverlayX6739 \
-    LineageDialerOverlayX6739
+    LineageDialerOverlayX6739 \
+    LineageSettingsOverlayX6739
 
 # Permissions
 PRODUCT_COPY_FILES += \
