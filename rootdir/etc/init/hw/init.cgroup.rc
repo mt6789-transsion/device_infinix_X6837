@@ -13,11 +13,11 @@ on charger
 on property:vendor.all.modules.ready=1
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "sugov_ext"
     write /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/down_rate_limit_us 1000
 
     write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "sugov_ext"
     write /sys/devices/system/cpu/cpufreq/policy6/sugov_ext/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy6/sugov_ext/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpufreq/policy6/sugov_ext/down_rate_limit_us 1000
 
 on init
     write /sys/devices/platform/soc/11270000.ufshci/clkgate_enable 0
