@@ -590,4 +590,7 @@
 	<!-- If true, the doze component is not started until after the screen has been
 		turned off and the screen off animation has been performed. -->
 	<bool name="config_dozeAfterScreenOffByDefault">true</bool>
+
+    <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
+    <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.7</item>
 </resources>
