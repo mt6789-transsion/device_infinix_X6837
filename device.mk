@@ -204,7 +204,7 @@ PRODUCT_PACKAGES += \
     init.insmod.sh \
     init.insmod.mt6789.cfg \
     init.modem.rc \
-    init.cgroup.rc \
+    init.mt6789.power.rc \
     init.mt6789.rc \
     init.mt6789.usb.rc \
     init.mtkgki.rc \
