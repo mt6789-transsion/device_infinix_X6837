@@ -39,9 +39,11 @@ on late-init
 # enable rcu_expedited
     write /sys/kernel/rcu_expedited 1
 
-# mount different fs start
-
-on property:init.svc.vendor.charger=running
+on charger
+    #MD:delete XLBELHQQS-6425 for cache by xiaoxiang.xiong 20220616 start
+    #exec /system/bin/e2fsck -f -p /dev/block/by-name/cache
+    #mount ext4 /dev/block/by-name/cache /cache rw wait
+    #MD:delete XLBELHQQS-6425 for cache by xiaoxiang.xiong 20220616 end
     chmod 0660 /dev/spm
     chown system system /dev/spm
     chmod 0666 /dev/kmsg
