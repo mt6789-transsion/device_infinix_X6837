@@ -3,6 +3,10 @@
 /sys/devices/platform/charger/tran_aichg_bigdata                                                   u:object_r:sysfs_aichg_file:s0
 /sys/devices/platform/charger/tran_aichg_disable_charger                                           u:object_r:sysfs_aichg_file:s0
 
+# BatteryInfo
+/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-006b/power_supply/charger(/.*)?          u:object_r:sysfs_batteryinfo:s0
+/sys/devices/platform/odm/odm:tran_auto_test/power_supply/tran-auto-test(/.*)?           u:object_r:sysfs_batteryinfo:s0
+
 # Camera Data
 /data/vendor/arcsoft(/.*)?                                                                         u:object_r:vendor_arcsoft_data_file:s0
 /data/vendor/camera(/.*)?                                                                          u:object_r:transsion_camera_data_file:s0
@@ -75,3 +79,5 @@
 /sys/devices/platform/soc/11d03000.i2c/i2c-7/7-0058/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
 /sys/devices/platform/soc/11d04000.i2c/i2c-7/7-005a/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
 /sys/devices/platform/soc/11d04000.i2c/i2c-8/8-005a/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-0034/leds/vibrator_single(/.*)?               u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-005a/leds/vibrator_single(/.*)?               u:object_r:sysfs_vibrator:s0
