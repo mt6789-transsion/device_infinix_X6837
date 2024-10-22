@@ -1,3 +1,10 @@
+# APK Verity
+ro.apk_verity.mode=2
+
+# ART
+dalvik.vm.dex2oat-minidebuginfo=false
+dalvik.vm.minidebuginfo=false
+
 # AAL
 ro.vendor.mtk_aal_support=1
 
@@ -98,6 +105,9 @@ ro.vendor.mtk_agps_app=1
 ro.vendor.mtk_gps_support=1
 ro.vendor.mtk_log_hide_gps=0
 
+# IncrementalFS
+ro.incremental.enable=yes
+
 # Keymaster
 ro.vendor.keymaster_version=5.0
 
@@ -116,9 +126,9 @@ ro.lmk.thrashing_limit_decay=50
 # Media
 debug.stagefright.c2inputsurface=-1
 media.c2.dmabuf.padding=3072
-ro.vendor.jpeg_decode_sw_opt=1
+ro.vendor.iomanager.support=1
+ro.vendor.jpeg_decode_sw_opt=2
 ro.vendor.mtk.c2.vdec.fmt.support.level=1
-ro.vendor.mtk_config_max_dram_size=0x800000000
 ro.vendor.mtk_sec_video_path_support=1
 ro.vendor.mtk_video_hevc_enc_support=1
 vendor.media.heif.feature.off=1
@@ -135,6 +145,14 @@ ro.vendor.mediatek.version.release=alps-mp-s0.mp1.rc-V15.102_reallytek.s0mp1rc.k
 # Misc
 persist.vendor.kernel.version=5
 persist.vendor.uxcompaction_enable=true
+persist.vendor.factory.GB2312=no
+ro.limit_cache.support=1
+ro.vendor.camera.isp.support.colorspace=0
+ro.vendor.efuse_writer_enable=1
+ro.vendor.mml.mtk_mml_support=0
+ro.vendor.mtk_gwsd_capability=1
+ro.vendor.mtk_mvpu_security_support=0
+ro.vendor.mtk_ovl_bringup=0
 ro.vendor.rc=/vendor/etc/init/hw/
 
 # Netflix
@@ -261,33 +279,21 @@ debug.sf.late.app.duration=20000000
 debug.sf.late.sf.duration=27600000
 debug.sf.set_binder_thread_rt=1
 debug.sf.use_phase_offsets_as_durations=1
+debug.sf.layer_caching_active_layer_timeout_ms=1000
+debug.sf.phase_offset_threshold_for_next_vsync_ns=6100000
+debug.sf.predict_hwc_composition_strategy=0
+ro.surface_flinger.display_update_imminent_timeout_ms=50
+ro.surface_flinger.enable_frame_rate_override=false
+ro.surface_flinger.enable_layer_caching=true
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_HDR_display=false
 ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 ro.surface_flinger.primary_display_orientation=ORIENTATION_0
 ro.surface_flinger.protected_contents=true
-vendor.debug.sf.cpupolicy=0
-vendor.debug.sf.cpupolicy.upbound_uclamp_min=350
-vendor.debug.sf.cpupolicy.max_correct_offset=150
-vendor.debug.sf.cpupolicy.rt_bl_min=300
-vendor.debug.sf.cpupolicy.base_min_bl=310
-vendor.debug.sf.cpupolicy.sf_cpu_thres=290
-vendor.debug.sf.cpupolicy.upbound_uclamp_max_ll=262
-vendor.debug.sf.cpupolicy.hw_comp_suspend=1
-vendor.debug.sf.cpupolicy.hw_hfr_suspend=1
-vendor.debug.sf.cpupolicy.xgf_min=25
-vendor.debug.sf.cpupolicy.min_60_mml=165
-vendor.debug.sf.cpupolicy.min_30_mml=165
-vendor.debug.sf.cpupolicy.lowbound_uclamp_min=165
-vendor.debug.sf.cpupolicy.upbound_uclamp_ret_sys=210
-vendor.debug.sf.cpupolicy.min_60=130
-vendor.debug.sf.cpupolicy.min_90=165
-vendor.debug.sf.cpupolicy.min_120=165
-vendor.debug.sf.cpupolicy.min_boost=165
-vendor.debug.sf.cpupolicy.power_up_120=-300000
-vendor.debug.sf.cpupolicy.power_down_120=300000
-vendor.debug.sf.cpupolicy.re_hfr=0
+ro.surface_flinger.uclamp.min=130
+ro.surface_flinger.use_color_management=true
+service.sf.prime_shader_cache=0
 
 # SOC
 ro.soc.manufacturer=Mediatek
