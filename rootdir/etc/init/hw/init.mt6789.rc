@@ -880,6 +880,16 @@ on property:persist.vendor.mediatek.fast_charging.support=*
 on boot
     insmod /vendor/lib/modules/fpsgo.ko
 
+service vendor.charger /system/bin/charger
+    class charger
+    user system
+    group system graphics wakelock input
+    capabilities SYS_BOOT
+    file /dev/kmsg w
+    file /sys/fs/pstore/console-ramoops-0 r
+    file /sys/fs/pstore/console-ramoops r
+    file /proc/last_kmsg r
+
 #SPD: add resmonitor and smartpanel bind small core by rui.fu 20230117 start
 service spd_cpu_set_sh /vendor/bin/init.spd_cpu_set.sh
     class main
