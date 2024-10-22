@@ -661,12 +661,6 @@ on boot
     chmod 0666 /sys/wireless/wireless/Rx/fake_rx_detect
     #MG-CHG(Bypass):wireless function by yongqing 20221008 start
 
-
-    #MG-CHG(Bypass):bypass function by yongqing 20221008 start
-    chown system system /sys/devices/platform/charger/tran_aichg_disable_charger
-    chmod 0666 /sys/devices/platform/charger/tran_aichg_disable_charger
-    #MG-CHG(Bypass):bypass function by yongqing 20221008 end
-
     chown system system /sys/led/led/tran_led_cmd
 	chmod 0666 /sys/led/led/tran_led_cmd
 
