@@ -1,3 +1,7 @@
+# BatteryInfo
+/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-006b/power_supply/charger(/.*)?          u:object_r:sysfs_batteryinfo:s0
+/sys/devices/platform/odm/odm:tran_auto_test/power_supply/tran-auto-test(/.*)?           u:object_r:sysfs_batteryinfo:s0
+
 # Camera
 /dev/cml421_ois(/.*)?                                                                   u:object_r:cml421_ois_device:s0
 /dev/cwvi5300                                                                           u:object_r:cwvi5300_device:s0
@@ -58,4 +62,5 @@
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service-mediatek-lazy       u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.vibrator-service\.example                 u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.vibrator-service\.mediatek                u:object_r:hal_vibrator_default_exec:s0
-/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-005a/leds/vibrator_single(/.*)?           u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-0034/leds/vibrator_single(/.*)?               u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-005a/leds/vibrator_single(/.*)?               u:object_r:sysfs_vibrator:s0

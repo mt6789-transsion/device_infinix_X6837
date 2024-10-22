@@ -1,5 +1,7 @@
 # Battery
-genfscon sysfs /devices/platform/odm/odm:usb_switch/power_supply/usb_switch                         u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/odm/odm:usb_switch/power_supply/usb_switch                          u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/mtk_ctd/power_supply                                                u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt6358-chrdet/power_supply u:object_r:sysfs_batteryinfo:s0
 
 # Devices
 genfscon sysfs /devices/platform/11270000.ufshci/host0/target0:0:0/0:0:0:0/block/sda/queue         u:object_r:sysfs_devices_block:s0
@@ -15,9 +17,6 @@ genfscon sysfs /devices/platform/11270000.ufshci/host0/target0:0:0/0:0:0:2/block
 # Extcon
 genfscon sysfs /devices/platform/extcon_usb                                                        u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/platform/extcon_usb1                                                       u:object_r:sysfs_extcon:s0
-
-# Health
-genfscon sysfs /devices/platform/soc/11017000.i2c/i2c-5/5-006b/power_supply/charger(/.*)?           u:object_r:sysfs_batteryinfo:s0
 
 # Gesture
 genfscon proc /gesture_function                                                                     u:object_r:proc_gesture_function:s0
