@@ -107,6 +107,10 @@ function blob_fixup() {
         vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so)
             "$PATCHELF" --replace-needed "libhidlbase.so" "libhidlbase_shim.so" "$2"
             ;;
+        vendor/etc/init/init.thermal_core.rc)
+            [ "$2" = "" ] && return 0
+            sed -i 's|ro.vendor.mtk_thermal_2_0|vendor.thermal.link_ready|g' "${2}"
+           ;;
     esac
 }
 
