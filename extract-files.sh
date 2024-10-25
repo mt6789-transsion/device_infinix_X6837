@@ -104,6 +104,9 @@ function blob_fixup() {
         system_ext/lib64/libsink.so)
             "${PATCHELF}" --add-needed "libshim_sink.so" "$2"
             ;;
+        vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so)
+            "$PATCHELF" --replace-needed "libhidlbase.so" "libhidlbase_shim.so" "$2"
+            ;;
     esac
 }
 
