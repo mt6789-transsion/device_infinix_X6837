@@ -84,11 +84,6 @@ media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.vendor.mtk_flv_playback_support=1
 vendor.mtk_thumbnail_optimization=true
 
-# Memory Optimization
-ro.config.dha_cached_max=32
-ro.config.dha_cached_min=16
-ro.config.per_app_memcg=false
-
 # Misc
 Build.BRAND=MTK
 ro.transsion.tranfs.path=/tranfs
