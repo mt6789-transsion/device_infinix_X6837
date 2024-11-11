@@ -8,6 +8,9 @@ DEVICE_PATH := device/infinix/X6837
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 CONFIGS_PATH := $(DEVICE_PATH)/configs
 
+# Force any prefer32 targets to be compiled as 64 bit.
+IGNORE_PREFER32_ON_DEVICE := true
+
 # Include 64-bit drmserver to support 64-bit only devices
 TARGET_DYNAMIC_64_32_DRMSERVER := true
 
