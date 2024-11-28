@@ -13,6 +13,7 @@ allow hal_fingerprint_default property_socket:sock_file write;
 allow hal_fingerprint_default fpsensor_fp_device:chr_file { ioctl read write open };
 allow hal_fingerprint_default fp_ext_svc2_service:hwservice_manager add;
 allow hal_fingerprint_default fp_ext_svc2_service:hwservice_manager find;
+allow hal_fingerprint_default fs_service:service_manager { add find };
 
 vndbinder_use(hal_fingerprint_default)
 hwbinder_use(hal_fingerprint_default)
