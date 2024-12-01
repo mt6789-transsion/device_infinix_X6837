@@ -24,10 +24,8 @@ PRODUCT_MODEL := Infinix X6837
 PRODUCT_GMS_CLIENTID_BASE := android-transsion
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="sys_tssi_64_armv82_infinix-user 13 TP1A.220624.014 526124 release-keys" \
-    PRODUCT_NAME=X6837-OP
-
-BUILD_FINGERPRINT := Infinix/X6837-OP/Infinix-X6837:13/TP1A.220624.014/240313V1154:user/release-keys
+    DeviceName=X6837 \
+    BuildFingerprint=Infinix/X6837-OP/Infinix-X6837:13/TP1A.220624.014/240313V1154:user/release-keys
 
 # Time
 LINEAGE_VERSION_APPEND_TIME_OF_DAY := true
