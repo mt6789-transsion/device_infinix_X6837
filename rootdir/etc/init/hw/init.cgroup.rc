@@ -11,27 +11,17 @@ on charger
 
 
 on property:vendor.all.modules.ready=1
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "sugov_ext"
+    write /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/down_rate_limit_us 20000
 
-    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpufreq/policy6/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy6/schedutil/down_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "sugov_ext"
+    write /sys/devices/system/cpu/cpufreq/policy6/sugov_ext/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy6/sugov_ext/down_rate_limit_us 20000
 
 on init
-    # Set PELT multiplier to 2, which is equivalent to a 16ms half-life.
-    write /proc/sys/kernel/sched_pelt_multiplier 2
-
     write /sys/devices/platform/soc/11270000.ufshci/clkgate_enable 0
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
-
-    # update cpus for cpuset cgroup
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/foreground/boost/cpus 0-7
-    write /dev/cpuset/background/cpus 0-3
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/top-app/cpus 0-7
 
     # boot perf. tune
     write /dev/cpuctl/system/cpu.uclamp.min 100
@@ -45,7 +35,7 @@ on init
     write /dev/cpuctl/background/cpu.uclamp.min 100
     write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 1
 
-on enable-low-power
+on property:sys.boot_completed=1
     write /sys/devices/platform/soc/11270000.ufshci/clkgate_enable 1
     write /proc/sys/kernel/sched_migration_cost_ns 200000
 
@@ -53,40 +43,13 @@ on enable-low-power
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 0
     write /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq 0
     write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 0
-
-# Configure clamps for standard task groups.
-    # system-background
-    # cap the max utilisation for system-background tasks to save power.
-    write /dev/cpuctl/system/cpu.uclamp.max 40
     write /dev/cpuctl/system/cpu.uclamp.min 0
     write /dev/cpuctl/system/cpu.uclamp.latency_sensitive 0
-    write /dev/cpuctl/system-background/cpu.uclamp.max 40
     write /dev/cpuctl/system-background/cpu.uclamp.min 0
     write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
-    
-    # foreground
-    write /dev/cpuctl/foreground/cpu.uclamp.max max
-    write /dev/cpuctl/foreground/cpu.uclamp.min 10
+    write /dev/cpuctl/foreground/cpu.uclamp.min 0
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 0
-
-    # top-app
-    write /dev/cpuctl/top-app/cpu.uclamp.max max
-    write /dev/cpuctl/top-app/cpu.uclamp.min 10
-    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-    # background
-    # cap the max utilisation for background tasks to save power.
-    write /dev/cpuctl/background/cpu.uclamp.max 50
+    write /dev/cpuctl/top-app/cpu.uclamp.min 0
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 0
     write /dev/cpuctl/background/cpu.uclamp.min 0
     write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
-    
-    # nnapi-hal
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.max max
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.min 75
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.latency_sensitive 1
-    # camera-daemon
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 50
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
-    
-on property:sys.boot_completed=1
-    trigger enable-low-power

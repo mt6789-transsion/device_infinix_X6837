@@ -19,15 +19,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.aee.rc",
-    src: "etc/init/hw/init.aee.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "init.mt6789.power.rc",
-    src: "etc/init/hw/init.mt6789.power.rc",
+    name: "init.cgroup.rc",
+    src: "etc/init/hw/init.cgroup.rc",
     sub_dir: "init/hw",
     vendor: true
 }

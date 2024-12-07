@@ -1,6 +1,3 @@
-# AEE
-ro.vendor.have_aee_feature=1
-
 # Audio
 audio.offload.disable=true
 vendor.af.dynamic.sleeptime.enable=true
