@@ -25,7 +25,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-transsion
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceName=X6837 \
-    BuildFingerprint=Infinix/X6837-OP/Infinix-X6837:13/TP1A.220624.014/240313V1154:user/release-keys
+    BuildFingerprint=Infinix/X6837-OP/Infinix-X6837:13/TP1A.220624.014/240929V1624:user/release-keys
 
 # Time
 LINEAGE_VERSION_APPEND_TIME_OF_DAY := true

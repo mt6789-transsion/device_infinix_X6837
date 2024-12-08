@@ -1,4 +1,4 @@
-## x6837 package version: X6837-H897ABCDEFQRZAaAb-T-BASE-240313V1154, unless stated otherwise
+## x6837 package version: X6837-H897ABCDEFQRZAaAb-T-BASE-240929V1624, unless stated otherwise
 
 # AEE
 vendor/lib/libaedv.so
