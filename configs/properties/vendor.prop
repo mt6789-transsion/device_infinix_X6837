@@ -83,6 +83,7 @@ persist.sys.fuse.passthrough.enable=true
 ro.hardware.gatekeeper=trustonic
 
 # Graphics
+debug.graphics.game_default_frame_rate.disabled=true
 debug.hwui.skia_atrace_enabled=false
 debug.mediatek.appgamepq_compress=1
 debug.sf.enable_transaction_tracing=false
