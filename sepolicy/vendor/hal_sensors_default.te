@@ -1,0 +1,18 @@
+allow hal_sensors_default hf_manager_device:chr_file rw_file_perms;
+allow hal_sensors_default {
+    block_device
+    gsi_metadata_file
+    hal_sensors_default
+    mnt_vendor_file
+    sysfs_dt_firmware_android
+}:dir search;
+allow hal_sensors_default {
+    proc_bootconfig
+    sysfs_dt_firmware_android
+}:file r_file_perms;
+
+binder_call(hal_sensors_default, system_server)
+
+rw_dir_file(hal_sensors_default, nvcfg_file)
+rw_dir_file(hal_sensors_default, nvdata_file)
+rw_dir_file(hal_sensors_default, sensor_data_file)
