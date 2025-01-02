@@ -891,32 +891,6 @@ on property:sys.boot_completed=1
 on boot
     insmod /vendor/lib/modules/fpsgo.ko
 
-#SPD: add resmonitor and smartpanel bind small core by rui.fu 20230117 start
-service spd_cpu_set_sh /vendor/bin/init.spd_cpu_set.sh
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
-on property:sys.boot_completed=1
-    start spd_cpu_set_sh
-#SPD: add resmonitor and smartpanel bind small core by rui.fu 20230117 end
-
-#SPD: add for watermark_scale_factor at 20230302 start
+# OTG
 on property:sys.boot_completed=1
     write /sys/devices/platform/odm/odm:tran_battery/OTG_CTL 1
-    write /proc/sys/vm/watermark_scale_factor 200
-    setprop vendor.tran.cur_max_process 72
-#SPD: add for watermark_scale_factor at 20230302 end
-#SPD: add for control dex2oat cpu by fan.feng1 20230619 start
-    write /dev/cpuset/dex2oat/cpus 0-3
-    write /dev/cpuctl/dex2oat/cpu.shares 512
-    setprop persist.vendor.powerhal.dex2oat_threads 4
-#SPD: add for control dex2oat cpu by fan.feng1 20230619 end
-#KERENL: add cgroup customise profiles by chaoquan.li at 20240110 start
-    write /dev/cpuset/foreground-l/cpus 0-6
-    write /dev/cpuset/background-l/cpus 0-1
-    write /dev/cpuctl/foreground-l/cpu.shares 2048
-    write /dev/cpuctl/background-l/cpu.shares 512
-#KERENL: add cgroup customise profiles by chaoquan.li at 20240110 end
