@@ -1,0 +1,3 @@
+allow mtk_hal_camera hal_trancamserver_hwservice:hwservice_manager find;
+
+binder_call(mtk_hal_camera, trancamserver)
