@@ -1,0 +1,6 @@
+type trancamserver, domain, halserverdomain;
+type trancamserver_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(trancamserver)
+
+add_hwservice(trancamserver, hal_trancamserver_hwservice)
