@@ -1,3 +1,4 @@
 allow platform_app sysfs_tran_cam_file:file rw_file_perms;
 
 rw_dir_file(platform_app, transsion_camera_data_file)
+rw_dir_file(platform_app, vendor_watermark_data_file)

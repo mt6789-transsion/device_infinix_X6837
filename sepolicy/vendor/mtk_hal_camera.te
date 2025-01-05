@@ -1,6 +1,8 @@
 allow mtk_hal_camera hal_trancamserver_hwservice:hwservice_manager find;
 allow mtk_hal_camera sysfs_tran_cam_file:file rw_file_perms;
-allow mtk_hal_camera transsion_camera_data_file:dir { read write open add_name search };
-allow mtk_hal_camera transsion_camera_data_file:file { read write create getattr open };
+allow mtk_hal_camera { transsion_camera_data_file vendor_watermark_data_file }:dir { read write open add_name search };
+allow mtk_hal_camera { transsion_camera_data_file vendor_watermark_data_file }:file { read write create getattr open };
 
 binder_call(mtk_hal_camera, trancamserver)
+
+get_prop(mtk_hal_camera, vendor_transsion_camera_watermark_support_prop)

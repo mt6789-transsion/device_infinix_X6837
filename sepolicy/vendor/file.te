@@ -1,5 +1,8 @@
 # Camera Data
 type transsion_camera_data_file, file_type, data_file_type, mlstrustedobject;
 
+# Camera Watermark
+type vendor_watermark_data_file, file_type, data_file_type, mlstrustedobject;
+
 # Trancam
 type sysfs_tran_cam_file, fs_type, sysfs_type;
