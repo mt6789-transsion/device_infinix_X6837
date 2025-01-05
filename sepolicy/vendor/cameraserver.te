@@ -1,0 +1,1 @@
+allow cameraserver { sysfs_sub_torch_file sysfs_torch_file sysfs_tele_torch_file sysfs_wide_torch_file }:file rw_file_perms;
