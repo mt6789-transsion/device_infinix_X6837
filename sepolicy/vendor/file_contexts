@@ -2,6 +2,9 @@
 /data/vendor/camera(/.*)?                                                                          u:object_r:transsion_camera_data_file:s0
 /data/vendor/multicam(/.*)?                                                                        u:object_r:transsion_camera_data_file:s0
 
+# Camera Watermark
+/data/vendor/camera_watermark(/.*)?                                                                u:object_r:vendor_watermark_data_file:s0
+
 # Lights
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.transsion                        u:object_r:hal_light_default_exec:s0
 
