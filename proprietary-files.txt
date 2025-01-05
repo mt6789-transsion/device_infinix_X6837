@@ -1810,24 +1810,6 @@ vendor/lib64/libtlcWidevineModularDrm.so
 vendor/lib64/liburee_meta_drmkeyinstall.so
 -vendor/lib64/libwvhidl.so;REPLACEDEP=libprotobuf-cpp-full-3.9.1:libprotobuf-cpp-full-3.9.1-vendorcompat
 
-# Fingerprint
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
-vendor/etc/init/vendor.fpsensor.rc
-vendor/etc/init/vendor.goodix.rc
--vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml
--vendor/etc/vintf/manifest/manifest_chipone.xml
-vendor/lib64/hw/fpsensor_fingerprint.default.so
-vendor/lib64/libfp_ext_svc2.so
-vendor/lib64/hw/gf_fingerprint.default.so
-vendor/lib64/libgf_ca.so
-vendor/lib64/libgf_factory_test.so
-vendor/lib64/libgf_hal.so
-vendor/lib64/libgoodixhwfingerprint.so
-vendor/lib64/libtneclient.so
-vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
-vendor/lib64/vendor.fpsensor.hardware.fpsensorhidlsvc@2.0.so
-
 # Firmware
 vendor/firmware/BT_FW.cfg
 vendor/firmware/Conf_MultipleTest_01.ini
@@ -2650,9 +2632,6 @@ vendor/lib64/libminizip.so
 vendor/lib64/libtranlog.so
 vendor/lib64/vendor.transsion.hardware.tranlog@1.0.so
 vendor/lib64/vendor.transsion.hardware.tranlogconfig@1.0.so
-
-# Transsion Camera - from Irawans ROM 
--system_ext/app/TranssionCamera/TranssionCamera.apk
 
 # Vibrator
 vendor/lib/libvibrator.so
