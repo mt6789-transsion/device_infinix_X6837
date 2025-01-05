@@ -1,3 +1,4 @@
 allow mtk_hal_camera hal_trancamserver_hwservice:hwservice_manager find;
+allow mtk_hal_camera sysfs_tran_cam_file:file rw_file_perms;
 
 binder_call(mtk_hal_camera, trancamserver)
