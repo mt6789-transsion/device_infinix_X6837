@@ -1,0 +1,2 @@
+# Trancam
+type sysfs_tran_cam_file, fs_type, sysfs_type;
