@@ -8,3 +8,14 @@ vendor.debug.seninf.hs_trail                         u:object_r:vendor_mtk_camer
 
 # Camera Watermark
 ro.vendor.transsion.camera_watermark                 u:object_r:vendor_transsion_camera_watermark_support_prop:s0
+
+# Fingerprint
+persist.vendor.fp.sensorUid                          u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.sys.fp.dump_data                      u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.sys.fp.fod.location.X_Y               u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.sys.fp.fod.size.width_height          u:object_r:vendor_fingerprint_prop:s0
+ro.vendor.tran.fp.support                            u:object_r:vendor_fingerprint_prop:s0
+vendor.fp.center.X.offset                            u:object_r:vendor_fingerprint_prop:s0
+vendor.fp.center.Y.offset                            u:object_r:vendor_fingerprint_prop:s0
+vendor.fp.currentUid                                 u:object_r:vendor_fingerprint_prop:s0
+vendor.fp.transsion.lcmname                          u:object_r:vendor_fingerprint_prop:s0

@@ -1,2 +1,5 @@
 # Camera Watermark
 vendor_internal_prop(vendor_transsion_camera_watermark_support_prop)
+
+# Fingerprint
+vendor_internal_prop(vendor_fingerprint_prop)

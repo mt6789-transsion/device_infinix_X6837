@@ -5,6 +5,10 @@
 # Camera Watermark
 /data/vendor/camera_watermark(/.*)?                                                                u:object_r:vendor_watermark_data_file:s0
 
+# Fingerprint
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-mediatek    u:object_r:hal_fingerprint_default_exec:s0
+/sys/kernel/tran_fp(/.*)?                                                                          u:object_r:sysfs_fp_name_path:s0
+
 # Lights
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.transsion                        u:object_r:hal_light_default_exec:s0
 
