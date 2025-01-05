@@ -1,2 +1,5 @@
+# Fingerprint
+vendor.mediatek.hardware.biometrics.fingerprint::ITranBiometricsFingerprint    u:object_r:hal_fingerprint_hwservice:s0
+
 # Trancam
-vendor.transsion.hardware.trancam.trancamserver::ITrancamserver    u:object_r:hal_trancamserver_hwservice:s0
+vendor.transsion.hardware.trancam.trancamserver::ITrancamserver                u:object_r:hal_trancamserver_hwservice:s0
