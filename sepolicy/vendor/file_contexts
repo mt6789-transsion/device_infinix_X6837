@@ -32,3 +32,17 @@
 
 # Vibrator
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service\.transsion                      u:object_r:hal_vibrator_default_exec:s0
+/sys/devices/platform/11d00000.i2c/i2c-8/8-0034/leds/vibrator_single(/.*)?                         u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/11d00000.i2c/i2c-8/8-0058/leds/vibrator_single(/.*)?                         u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/11d02000.i2c/i2c-3/3-005a/leds/vibrator_single(/.*)?                         u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/11f00000.i2c/i2c-6/6-0058/leds/vibrator_single(/.*)?                         u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/11017000.i2c/i2c-5/5-0034/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/11017000.i2c/i2c-5/5-0058/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-0034/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-0058/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-005a/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/11d02000.i2c/i2c-3/3-0058/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/11d02000.i2c/i2c-3/3-005a/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/11d03000.i2c/i2c-7/7-0058/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/11d04000.i2c/i2c-7/7-005a/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/11d04000.i2c/i2c-8/8-005a/leds/vibrator_single(/.*)?                     u:object_r:sysfs_vibrator:s0
