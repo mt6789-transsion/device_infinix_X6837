@@ -27,3 +27,7 @@ persist.vendor.goodix.dump_data                      u:object_r:vendor_fingerpri
 persist.vendor.sys.fp.goodix.spmt.flag               u:object_r:vendor_fingerprint_prop:s0
 vendor.fp.goodix.X.offset                            u:object_r:vendor_fingerprint_prop:s0
 vendor.fp.goodix.Y.offset                            u:object_r:vendor_fingerprint_prop:s0
+
+# VT
+ro.vendor.vt.                                        u:object_r:vendor_mtk_vendor_vt_prop:s0
+ro.vendor.vt_hevc_support                            u:object_r:vendor_mtk_vendor_vt_prop:s0
