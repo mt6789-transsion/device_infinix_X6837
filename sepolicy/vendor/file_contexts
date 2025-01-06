@@ -1,3 +1,8 @@
+# Aichg
+/sys/devices/platform/charger/bypass_charger                                                       u:object_r:sysfs_aichg_file:s0
+/sys/devices/platform/charger/tran_aichg_bigdata                                                   u:object_r:sysfs_aichg_file:s0
+/sys/devices/platform/charger/tran_aichg_disable_charger                                           u:object_r:sysfs_aichg_file:s0
+
 # Camera Data
 /data/vendor/camera(/.*)?                                                                          u:object_r:transsion_camera_data_file:s0
 /data/vendor/multicam(/.*)?                                                                        u:object_r:transsion_camera_data_file:s0
