@@ -1,3 +1,6 @@
+# Aichg
+type sysfs_aichg_file, fs_type, sysfs_type;
+
 # Camera Data
 type transsion_camera_data_file, file_type, data_file_type, mlstrustedobject;
 
