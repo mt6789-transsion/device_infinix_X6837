@@ -19,3 +19,11 @@ vendor.fp.center.X.offset                            u:object_r:vendor_fingerpri
 vendor.fp.center.Y.offset                            u:object_r:vendor_fingerprint_prop:s0
 vendor.fp.currentUid                                 u:object_r:vendor_fingerprint_prop:s0
 vendor.fp.transsion.lcmname                          u:object_r:vendor_fingerprint_prop:s0
+
+# Fingerprint (Goodix)
+persist.vendor.gf.debug.dump_data                    u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.gf.debug.dump_talog_data              u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.goodix.dump_data                      u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.sys.fp.goodix.spmt.flag               u:object_r:vendor_fingerprint_prop:s0
+vendor.fp.goodix.X.offset                            u:object_r:vendor_fingerprint_prop:s0
+vendor.fp.goodix.Y.offset                            u:object_r:vendor_fingerprint_prop:s0

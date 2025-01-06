@@ -7,3 +7,8 @@ ro.mtk_cam_dualzoom_support         u:object_r:system_mtk_camera_prop:s0
 ro.mtk_cam_stereo_camera_support    u:object_r:system_mtk_camera_prop:s0
 RUNTIME_OVERRIDE_LOG_LEVEL          u:object_r:exported_system_prop:s0
 RUNTIME_OVERRIDE_OPENCL_MEM_TYPE    u:object_r:exported_system_prop:s0
+
+# Fingerprint (Goodix)
+gf.debug.fp_vendor                  u:object_r:system_goodix_prop:s0
+gf.debug.fp_model                   u:object_r:system_goodix_prop:s0
+gf.debug.fp_serial                  u:object_r:system_goodix_prop:s0
