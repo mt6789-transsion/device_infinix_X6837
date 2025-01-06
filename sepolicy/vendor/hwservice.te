@@ -1,2 +1,5 @@
+# Fingerprint (Goodix)
+type goodix_fingerprint_service, service_manager_type, hwservice_manager_type;
+
 # Trancam
 type hal_trancamserver_hwservice, hwservice_manager_type;
