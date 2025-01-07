@@ -1,1 +1,3 @@
+allow mtk_hal_power proc_gesture_function:file rw_file_perms;
+
 get_prop(mtk_hal_power, vendor_thermal_prop)
