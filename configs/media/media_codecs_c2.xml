@@ -56,7 +56,7 @@
             <Limit name="blocks-per-second" range="1-522240" />
             <Limit name="bitrate" range="1-60000000" />
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1088" value="60" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.h263.decoder" type="video/3gpp" >
@@ -68,7 +68,7 @@
             <Limit name="blocks-per-second" range="48-522240" />
             <Limit name="bitrate" range="1-60000000" />
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1280x720" value="60" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.avc.decoder" type="video/avc" >
@@ -81,7 +81,7 @@
             <Limit name="bitrate" range="1-40000000" />
             <Quirk name="wants-NAL-fragments" />
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1080" value="30" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.avc.decoder.secure" type="video/avc" >
@@ -107,7 +107,7 @@
             <Limit name="blocks-per-second" range="1-972000" />
             <Limit name="bitrate" range="1-40000000" />
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1080" value="30" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.heif.decoder" type="image/vnd.android.heic" >
@@ -126,7 +126,7 @@
             <Limit name="blocks-per-second" range="1-244800" />
             <Limit name="bitrate" range="1-8000000" />
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1080" value="30" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.vp9.decoder" type="video/x-vnd.on2.vp9" >
@@ -138,7 +138,7 @@
             <Limit name="blocks-per-second" range="1-972000" />
             <Limit name="bitrate" range="1-40000000" />
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1080" value="30" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.vp9.decoder.secure" type="video/x-vnd.on2.vp9" >
@@ -164,7 +164,7 @@
             <Limit name="blocks-per-second" range="1-522240" />
             <Limit name="bitrate" range="1-60000000" />
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1088" value="60" />
         </MediaCodec>
     </Decoders>
