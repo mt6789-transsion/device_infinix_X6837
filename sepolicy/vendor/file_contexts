@@ -23,6 +23,10 @@
 # Sensors
 /(vendor|system/vendor)/bin/hw/android\.hardware\.sensors-service\.transsion                       u:object_r:hal_sensors_default_exec:s0
 
+# TNE
+/(vendor|system/vendor)/bin/hw/vendor.tne@1.0-service                                              u:object_r:tnev_exec:s0
+/dev/tnek                                                                                          u:object_r:tneengine_tnek_file:s0
+
 # Touch
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.transsion                      u:object_r:hal_lineage_touch_default_exec:s0
 
