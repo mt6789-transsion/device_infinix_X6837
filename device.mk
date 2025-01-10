@@ -260,8 +260,12 @@ PRODUCT_PACKAGES += \
 # Linker config
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
     $(LOCAL_PATH)/configs/linker.config.json
+    
+# MediaCas
+PRODUCT_PACKAGES += \
+    android.hardware.cas@1.2-service-lazy
 
-# Media
+# Media (C2)
 PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.0.vendor:64 \
     android.hardware.media.c2@1.1.vendor:64 \
