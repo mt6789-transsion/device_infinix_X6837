@@ -1869,7 +1869,6 @@ vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 
 # Power
 vendor/etc/init/bootperf.rc
-vendor/etc/init/init.fpsgo.rc
 vendor/lib/libpower_timer.so
 vendor/lib/libperfctl_vendor.so
 vendor/lib/vendor.mediatek.hardware.power@1.1.so
