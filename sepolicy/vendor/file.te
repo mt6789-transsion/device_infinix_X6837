@@ -31,3 +31,6 @@ type sysfs_wide_torch_file, fs_type, sysfs_type;
 
 # Trancam
 type sysfs_tran_cam_file, fs_type, sysfs_type;
+
+# Tranfs
+type tranfs_device, dev_type;
