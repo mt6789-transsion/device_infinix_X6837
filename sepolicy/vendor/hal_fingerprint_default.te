@@ -1,8 +1,10 @@
+allow hal_fingerprint_default fpsensor_fp_device:chr_file rw_file_perms;
 allow hal_fingerprint_default mnt_vendor_file:dir { read open search };
 allow hal_fingerprint_default mnt_vendor_file:file { read write getattr open };
 allow hal_fingerprint_default persist_data_file:dir { read write create open add_name search };
 allow hal_fingerprint_default persist_data_file:file { read write create getattr open };
 
+add_hwservice(hal_fingerprint_default, fp_ext_svc2_hwservice)
 add_hwservice(hal_fingerprint_default, goodix_fingerprint_service)
 
 binder_call(hal_fingerprint_default, goodix_fingerprint_vndservice)

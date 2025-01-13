@@ -10,6 +10,9 @@ type vendor_watermark_data_file, file_type, data_file_type, mlstrustedobject;
 # Fingerprint
 type sysfs_fp_name_path, fs_type, sysfs_type;
 
+# Fingerprint (Fpsensor)
+type fpsensor_fp_device, dev_type;
+
 # Fingerprint (Goodix)
 type vendor_gf_data_file, file_type, data_file_type;
 
