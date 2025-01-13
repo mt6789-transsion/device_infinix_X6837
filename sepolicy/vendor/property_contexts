@@ -4,6 +4,7 @@ persist.vendor.camera.tran.camkit.videoEnhance       u:object_r:vendor_persist_c
 persist.vendor.camera.tran.camkit.videoFaceBeauty    u:object_r:vendor_persist_camera_prop:s0
 persist.vendor.camera.tran.camkit.videoHdr           u:object_r:vendor_persist_camera_prop:s0
 persist.vendor.camera.tran.camkit.videoNight         u:object_r:vendor_persist_camera_prop:s0
+vendor.camera.sensor.                                u:object_r:vendor_persist_camera_prop:s0
 vendor.debug.seninf.hs_trail                         u:object_r:vendor_mtk_camera_prop:s0
 vendor.realiso.disable                               u:object_r:vendor_mtk_camera_prop:s0
 
