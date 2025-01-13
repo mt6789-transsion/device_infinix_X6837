@@ -1,3 +1,6 @@
+# Fingerprint (Fpsensor)
+type fp_ext_svc2_hwservice, hwservice_manager_type;
+
 # Fingerprint (Goodix)
 type goodix_fingerprint_service, service_manager_type, hwservice_manager_type;
 

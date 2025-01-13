@@ -1,6 +1,9 @@
 # Fingerprint
 vendor.mediatek.hardware.biometrics.fingerprint::ITranBiometricsFingerprint    u:object_r:hal_fingerprint_hwservice:s0
 
+# Fingerprint (Fpsensor)
+vendor.fpsensor.hardware.fpsensorhidlsvc::IFpsensorHidlSvc                     u:object_r:fp_ext_svc2_hwservice:s0
+
 # Fingerprint (Goodix)
 vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon        u:object_r:goodix_fingerprint_service:s0
 vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemonExt     u:object_r:goodix_fingerprint_service:s0
