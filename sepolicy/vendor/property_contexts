@@ -8,6 +8,13 @@ ro.mtk_cam_stereo_camera_support            u:object_r:vendor_mtk_camera_prop:s0
 vendor.debug.seninf.hs_trail                u:object_r:vendor_mtk_camera_prop:s0
 ro.vendor.camera_tran_hal_server_support    u:object_r:vendor_mtk_camera_prop:s0
 ro.vendor.camera_tran_fake_stereo_support   u:object_r:vendor_mtk_camera_prop:s0
+persist.vendor.camera.tran.camkit.videoBokeh         u:object_r:vendor_persist_camera_prop:s0
+persist.vendor.camera.tran.camkit.videoEnhance       u:object_r:vendor_persist_camera_prop:s0
+persist.vendor.camera.tran.camkit.videoFaceBeauty    u:object_r:vendor_persist_camera_prop:s0
+persist.vendor.camera.tran.camkit.videoHdr           u:object_r:vendor_persist_camera_prop:s0
+persist.vendor.camera.tran.camkit.videoNight         u:object_r:vendor_persist_camera_prop:s0
+vendor.camera.sensor.                                u:object_r:vendor_persist_camera_prop:s0
+vendor.realiso.disable                               u:object_r:vendor_mtk_camera_prop:s0
 
 RUNTIME_OVERRIDE_OPENCL_MEM_TYPE            u:object_r:exported_default_prop:s0
 RUNTIME_OVERRIDE_LOG_LEVEL                  u:object_r:exported_default_prop:s0
