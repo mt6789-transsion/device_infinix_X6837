@@ -3,6 +3,7 @@ cam.egnsavefile.enable              u:object_r:exported_system_prop:s0
 debuglog.drv                        u:object_r:exported_system_prop:s0
 debuglog.drv.                       u:object_r:exported_system_prop:s0
 st_repair.debug.                    u:object_r:exported_system_prop:s0
+st.superresloution.gpu.level        u:object_r:exported_system_prop:s0
 ro.mtk_cam_dualzoom_support         u:object_r:system_mtk_camera_prop:s0
 ro.mtk_cam_stereo_camera_support    u:object_r:system_mtk_camera_prop:s0
 RUNTIME_OVERRIDE_LOG_LEVEL          u:object_r:exported_system_prop:s0
