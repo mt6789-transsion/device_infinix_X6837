@@ -5,6 +5,7 @@ type sysfs_aichg_file, fs_type, sysfs_type;
 type transsion_camera_data_file, file_type, data_file_type, mlstrustedobject;
 type transsion_camera_data_meghumaneffect_file, file_type, data_file_type;
 type vendor_arcsoft_data_file, file_type, data_file_type;
+type vendor_portrait_data_file, file_type, data_file_type, mlstrustedobject;
 
 # Camera Watermark
 type vendor_watermark_data_file, file_type, data_file_type, mlstrustedobject;
