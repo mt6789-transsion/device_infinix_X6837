@@ -1,7 +1,20 @@
 allow mtk_hal_camera hal_trancamserver_hwservice:hwservice_manager find;
-allow mtk_hal_camera { sysfs_sub_torch_file sysfs_torch_file sysfs_tele_torch_file sysfs_tran_cam_file sysfs_wide_torch_file tran_imgsensor_info_file }:file rw_file_perms;
-allow mtk_hal_camera { transsion_camera_data_file vendor_watermark_data_file }:dir { read write open add_name search };
-allow mtk_hal_camera { transsion_camera_data_file vendor_watermark_data_file }:file { read write create getattr open };
+
+allow mtk_hal_camera {
+    transsion_camera_data_file
+    vendor_watermark_data_file
+}:dir create_dir_perms;
+
+allow mtk_hal_camera { 
+    sysfs_sub_torch_file
+    sysfs_tele_torch_file
+    sysfs_torch_file
+    sysfs_tran_cam_file
+    sysfs_wide_torch_file
+    tran_imgsensor_info_file
+    transsion_camera_data_file
+    vendor_watermark_data_file
+}:file create_file_perms;
 
 binder_call(mtk_hal_camera, trancamserver)
 
