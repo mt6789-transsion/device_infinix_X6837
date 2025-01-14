@@ -3,6 +3,7 @@ allow mtk_hal_camera hal_trancamserver_hwservice:hwservice_manager find;
 allow mtk_hal_camera {
     transsion_camera_data_file
     transsion_camera_data_meghumaneffect_file
+    transsion_camera_meghdr_file
     vendor_watermark_data_file
 }:dir create_dir_perms;
 
@@ -15,6 +16,7 @@ allow mtk_hal_camera {
     tran_imgsensor_info_file
     transsion_camera_data_file
     transsion_camera_data_meghumaneffect_file
+    transsion_camera_meghdr_file
     vendor_watermark_data_file
 }:file create_file_perms;
 

@@ -43,6 +43,9 @@
 /sys/class/sensordrv/tran_imgsensor/tran_imgsensor_info                                            u:object_r:tran_imgsensor_info_file:s0
 /sys/devices/platform/(odm/odm:tran_battery|tran_battery)/tran_cam                                 u:object_r:sysfs_tran_cam_file:s0
 
+# Trancam Data
+/data/vendor/meg_working_dir(/.*)?                                                                 u:object_r:transsion_camera_meghdr_file:s0
+
 # Tranfs
 /dev/block/platform/soc/11270000.ufshci/by-name/tranfs                                             u:object_r:tranfs_device:s0
 

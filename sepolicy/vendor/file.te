@@ -34,5 +34,8 @@ type sysfs_wide_torch_file, fs_type, sysfs_type;
 type sysfs_tran_cam_file, fs_type, sysfs_type;
 type tran_imgsensor_info_file, fs_type, sysfs_type;
 
+# Trancam Data
+type transsion_camera_meghdr_file, file_type, data_file_type;
+
 # Tranfs
 type tranfs_device, dev_type;
