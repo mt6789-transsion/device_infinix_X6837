@@ -5,6 +5,7 @@
 
 # Camera Data
 /data/vendor/camera(/.*)?                                                                          u:object_r:transsion_camera_data_file:s0
+/data/vendor/meghumaneffect(/.*)?                                                                  u:object_r:transsion_camera_data_meghumaneffect_file:s0
 /data/vendor/multicam(/.*)?                                                                        u:object_r:transsion_camera_data_file:s0
 
 # Camera Watermark
