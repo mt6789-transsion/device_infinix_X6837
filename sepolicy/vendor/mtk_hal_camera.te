@@ -20,3 +20,4 @@ binder_call(mtk_hal_camera, trancamserver)
 
 get_prop(mtk_hal_camera, vendor_persist_camera_prop)
 get_prop(mtk_hal_camera, vendor_transsion_camera_watermark_support_prop)
+r_dir_file(mtk_hal_camera, sysfs_sensor)
