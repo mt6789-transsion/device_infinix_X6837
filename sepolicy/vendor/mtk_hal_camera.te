@@ -5,6 +5,7 @@ allow mtk_hal_camera {
     transsion_camera_data_meghumaneffect_file
     transsion_camera_meghdr_file
     vendor_arcsoft_data_file
+    vendor_portrait_data_file
     vendor_watermark_data_file
 }:dir create_dir_perms;
 
@@ -19,6 +20,7 @@ allow mtk_hal_camera {
     transsion_camera_data_meghumaneffect_file
     transsion_camera_meghdr_file
     vendor_arcsoft_data_file
+    vendor_portrait_data_file
     vendor_watermark_data_file
 }:file create_file_perms;
 
