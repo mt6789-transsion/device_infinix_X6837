@@ -89,7 +89,8 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.1.vendor
+    android.hardware.bluetooth@1.1.vendor:64 \
+    libldacBT_bco
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
