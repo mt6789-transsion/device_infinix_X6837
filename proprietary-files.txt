@@ -1271,10 +1271,6 @@ vendor/lib64/mt6789/libmnl.so
 vendor/lib64/librpc.so
 vendor/lib64/libviagpsrpc.so
 
-# HotwordEnrollment - from fleur-user 13 TP1A.220624.014 V816.0.2.0.TKEINXM release-keys 
-system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|99cfd80965c170f4885a7dd62c0eaad1a0c7840f
--system_ext/framework/com.android.hotwordenrollment.common.util.jar|7549028e83df9783ea5c7fbf78e5d904e2de0cf7
-
 # IMS - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys
 -system_ext/framework/mediatek-common.jar:framework/mediatek-common.jar|895c6819d00deb385675cc7b90f073d0b6fbd29d
 -system_ext/framework/mediatek-framework.jar:framework/mediatek-framework.jar|a9789fd904f4b0643a3257e798318faabf342477
