@@ -66,14 +66,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     audio_policy.stub \
-    libopus.vendor \
-    audioclient-types-aidl-cpp.vendor \
     libaudioroute.vendor \
     libaudiofoundation.vendor \
     libbluetooth_audio_session \
     libalsautils \
-    libnbaio_mono \
-    libtinycompress \
     libdynproc \
     libhapticgenerator \
     libprocessgroup.vendor
