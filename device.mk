@@ -138,6 +138,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor
 
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat:64 \
+    libprotobuf-cpp-full-3.9.1-vendorcompat:64
+
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
@@ -402,11 +406,7 @@ PRODUCT_COPY_FILES += \
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio@1.6.vendor \
-    libprotobuf-cpp-full.vendor \
-    libprotobuf-cpp-lite.vendor \
-    libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
+    android.hardware.radio@1.6.vendor
 
 # Required for QPR3
 PRODUCT_PACKAGES += \
