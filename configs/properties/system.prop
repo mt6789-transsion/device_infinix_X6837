@@ -24,7 +24,6 @@ bluetooth.profile.sap.server.enabled=true
 
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
-persist.device_config.runtime_native.usap_pool_enabled=false
 
 # IMS
 persist.dbg.volte_avail_ovr=1
@@ -50,17 +49,6 @@ vendor.rild.libpath=mtk-ril.so
 ro.vendor.mtk_telephony_add_on_policy=0
 persist.sys.radio.force_lte_ca=true
 
-# Thermal Management
-persist.thermal_config.mitigation=1
-ro.mtk_thermal_monitor.enabled=true
-
-# Thermal Configuration
-ro.config.thermal_dcs=40
-ro.config.thermal_limit=75
-
-# TNE
-ro.transsion.tne.support=true
-
 # WiFi
 wifi.interface=wlan0
 ro.mediatek.wlan.wsc=1
@@ -68,11 +56,6 @@ ro.mediatek.wlan.p2p=1
 mediatek.wlan.ctia=0
 wifi.tethering.interface=ap0
 wifi.direct.interface=p2p0
-
-# ZRAM
-ro.zram.first_wb_delay_mins=1440
-ro.zram.mark_idle_delay_mins=60
-ro.zram.periodic_wb_delay_hours=24
 
 # Zygote
 zygote.critical_window.minute=10
