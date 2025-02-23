@@ -27,7 +27,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.transsion                        u:object_r:hal_light_default_exec:s0
 
 # NFC
-/(vendor|system/vendor)/bin/hw/android\.hardware\.nfc-service\.nxp                                 u:object_r:hal_nfc_default_exec:s0
 /dev/pn553                                                                                         u:object_r:nfc_device:s0
 
 # Sensors
