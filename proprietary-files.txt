@@ -1321,6 +1321,10 @@ vendor/lib64/mt6789/libmtkcam_metastore.so|8f652afbab4e2596be978038678616e66148b
 bin/kpoc_charger
 etc/init/kpoc_charger.rc
 lib64/libshowlogo.so
+vendor/bin/smartcharging
+vendor/etc/init/init.charger.rc
+vendor/etc/init/smartcharging_init.rc
+vendor/lib64/libsmartcharging.so
 
 # Connectivity
 vendor/bin/wmt_launcher
