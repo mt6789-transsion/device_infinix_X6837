@@ -404,8 +404,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio@1.6.vendor \
-    libprotobuf-cpp-full.vendor \
-    libprotobuf-cpp-lite.vendor \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
 
@@ -461,10 +459,6 @@ $(call soong_config_set,android_hardware_mediatek_usb,audio_accessory_supported,
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \
     android.hardware.usb.gadget-service.mediatek
-    
-# Vendor service manager
-PRODUCT_PACKAGES += \
-    vndservicemanager
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -484,11 +478,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libunwindstack.vendor \
     libutilscallstack.vendor
-
-# vndservice
-PRODUCT_PACKAGES += \
-   vndservicemanager \
-   vndservice
     
 # Wi-Fi
 PRODUCT_PACKAGES += \
