@@ -201,9 +201,6 @@ vendor/etc/audio_param/VoWMicSetting_ParamUnitDesc.xml
 vendor/etc/audio_param/VoWVoiceCommand_AudioParam.xml
 vendor/etc/audio_param/VoWVoiceCommand_ParamUnitDesc.xml
 
-# Audio Configs - Patched (for fix incall)
-vendor/etc/audio_param/SpeechVol_AudioParam.xml|bd907725863fa84872d74f6e2c77c9f4c8d7525a
-
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
