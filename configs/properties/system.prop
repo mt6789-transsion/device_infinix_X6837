@@ -25,6 +25,15 @@ bluetooth.profile.sap.server.enabled=true
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
 
+# Disable vsync for cpu rendered apps
+debug.cpurend.vsync=false
+
+# Display
+debug.sf.enable_transaction_tracing=false
+debug.sf.predict_hwc_composition_strategy=0
+ro.opengles.version=196610
+vendor.debug.sf.display_dejitter=0
+
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
@@ -37,6 +46,9 @@ sys.ipo.pwrdncap=2
 # Misc
 Build.BRAND=MTK
 ro.transsion.tranfs.path=/tranfs
+
+# Partition
+ro.product.property_source_order=product,odm,vendor,system
 
 # Perf
 ro.mtk_perf_fast_start_win=1
