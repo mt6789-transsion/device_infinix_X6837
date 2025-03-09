@@ -10,6 +10,9 @@ on init
     chown system system /proc/gesture_function
     chmod 0660 /proc/gesture_function
 
+    # OTG
+    write /sys/devices/platform/odm/odm:tran_battery/OTG_CTL 1
+
 on post-fs-data
     chmod 0660 /dev/MAINAF
     chown system camera /dev/MAINAF
