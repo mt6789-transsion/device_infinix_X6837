@@ -1,0 +1,27 @@
+type chg_sence, domain, halserverdomain;
+type chg_sence_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(chg_sence)
+
+# /proc/bootconfig
+allow chg_sence proc_bootconfig:file r_file_perms;
+
+# /sys/firmware/devicetree/base/firmware/android/compatible
+allow chg_sence sysfs_dt_firmware_android:dir search;
+allow chg_sence sysfs_dt_firmware_android:file r_file_perms;
+
+# sdc15
+allow chg_sence gsi_metadata_file:dir search;
+
+# vendor
+allow chg_sence mnt_vendor_file:dir search;
+
+# /mnt/vendor/nvdata/APCFG/APRDCL/CHG_SCENE
+# /mnt/vendor/nvdata/APCFG/APRDCL/FILE_VER
+allow chg_sence nvdata_file:dir search;
+allow chg_sence nvdata_file:file r_file_perms;
+
+# /sys/devices/platform/charger/tran_battery_cycle
+allow chg_sence sysfs_bat_cycle:file { read write getattr open };
+
+allow chg_sence self:netlink_kobject_uevent_socket { read create bind getopt setopt };
