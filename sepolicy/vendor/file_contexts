@@ -50,6 +50,9 @@
 # Tranfs
 /dev/block/platform/soc/11270000.ufshci/by-name/tranfs                                             u:object_r:tranfs_device:s0
 
+# Trustonic
+/(vendor|system/vendor)/bin/kmsetkey_ca.trustonic                                                  u:object_r:trustonic_kmsetkey_ca_exec:s0
+
 # Vibrator
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service\.transsion                      u:object_r:hal_vibrator_default_exec:s0
 /sys/devices/platform/11d00000.i2c/i2c-8/8-0034/leds/vibrator_single(/.*)?                         u:object_r:sysfs_vibrator:s0
