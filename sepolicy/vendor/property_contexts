@@ -33,6 +33,9 @@ vendor.fp.goodix.Y.offset                            u:object_r:vendor_fingerpri
 # Surfaceflinger
 ro.vendor.tran.freeze.dectect.support                u:object_r:vendor_mtk_default_prop:s0
 
+# TEE property
+vendor.tee.googlekey.status                          u:object_r:vendor_mtk_trustonic_tee_prop:s0
+
 # VT
 ro.vendor.vt.                                        u:object_r:vendor_mtk_vendor_vt_prop:s0
 ro.vendor.vt_hevc_support                            u:object_r:vendor_mtk_vendor_vt_prop:s0
