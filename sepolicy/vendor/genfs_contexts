@@ -7,8 +7,11 @@ genfscon sysfs /devices/platform/soc/11017000.i2c/i2c-5/5-0053/power_supply    u
 genfscon sysfs /devices/platform/soc/11017000.i2c/i2c-5/5-006f/power_supply    u:object_r:sysfs_batteryinfo:s0
 
 # Extcon
-genfscon sysfs /devices/platform/extcon_usb/extcon/extcon0/cable.0/name    u:object_r:sysfs_extcon:s0
-genfscon sysfs /devices/platform/extcon_usb/extcon/extcon0/cable.1/name    u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/extcon_usb/extcon/extcon0/cable.0/name             u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/extcon_usb/extcon/extcon0/cable.1/name             u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/extcon_usb/extcon/extcon1/cable.0/name             u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/extcon_usb/extcon/extcon1/cable.1/name             u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc/14800000.dp_tx/extcon/dp_audio/cable.0/name    u:object_r:sysfs_extcon:s0
 
 # Gesture
 genfscon proc /game_state          u:object_r:proc_main_gesture_flag:s0
