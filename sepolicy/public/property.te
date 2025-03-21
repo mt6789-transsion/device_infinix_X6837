@@ -1,2 +1,3 @@
 system_public_prop(system_mtk_camera_prop)
 system_public_prop(system_goodix_prop)
+system_public_prop(system_nfc_prop)
