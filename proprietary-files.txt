@@ -52,7 +52,6 @@ vendor/lib64/libladder.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtkshifter_vendor.so
-vendor/lib64/libnxp_extamp_intf.so
 vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libspeech_enh_lib.so
 vendor/lib64/libspeechparser_vendor.so
@@ -445,7 +444,6 @@ vendor/lib64/libcolorlevel.so
 vendor/lib64/libFy-3A-Core.so
 vendor/lib64/libFy-3A-Param.so
 vendor/lib64/libhdrvideo.so
-vendor/lib64/libheichal.so
 vendor/lib64/libhydra.so
 vendor/lib64/libhyperion_hap_ca.so
 vendor/lib64/libimagebuffer_wrapper.so
@@ -456,7 +454,6 @@ vendor/lib64/libjpeg-alpha_vendor.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libmtkcam_3rdparty.thread.so
 vendor/lib64/libmtkcam_pipelinepolicy-aov.so
-vendor/lib64/libmtkhardware_legacy.so
 vendor/lib64/libmtkisp_metadata.so
 vendor/lib64/libSQLiteModule_VER_ALL.so
 vendor/lib64/libTranAutoColorLevel.so
@@ -595,6 +592,7 @@ vendor/lib64/mt6789/libmtkcam_imem.so
 vendor/lib64/mt6789/libmtkcam_imgbuf.so
 vendor/lib64/mt6789/libmtkcam_mapping_mgr.so
 vendor/lib64/mt6789/libmtkcam_metadata.so
+vendor/lib64/mt6789/libmtkcam_metastore.so
 vendor/lib64/mt6789/libmtkcam_mfb.so
 vendor/lib64/mt6789/libmtkcam_modulefactory_aaa.so
 vendor/lib64/mt6789/libmtkcam_modulefactory_custom.so
@@ -704,7 +702,6 @@ vendor/lib64/mt6789/libimageio_plat_pipe.so
 vendor/lib64/mt6789/libitdfacebeauty.so
 vendor/lib64/mt6789/liblpcnr.so
 vendor/lib64/mt6789/libmagicsky_64.so
-vendor/lib64/mt6789/libmnl.so
 vendor/lib64/mt6789/libmorpho_HDSR.so
 vendor/lib64/mt6789/libmorpho_video_stabilizer.so
 vendor/lib64/mt6789/libmpbase.so
@@ -1278,14 +1275,6 @@ vendor/data/camera/watermark/watermark_640x480.nv21
 vendor/data/camera/watermark/watermark_640x480.yuyv
 vendor/data/camera/watermark/watermark_config
 
-# Camera - Patched (RAW)
-vendor/lib64/mt6789/libmtkcam_metastore.so|8f652afbab4e2596be978038678616e66148ba24
-
-# Charger
-bin/kpoc_charger
-etc/init/kpoc_charger.rc
-lib64/libshowlogo.so
-
 # Connectivity
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
@@ -1337,9 +1326,6 @@ vendor/lib/libgpud.so
 vendor/lib/libgralloc_extra.so
 vendor/lib/libgralloc_metadata.so
 vendor/lib/libgralloctypes_mtk.so
-vendor/lib/libion_mtk.so
-vendor/lib/libion_ulit.so
-vendor/lib/libladder.so
 vendor/lib/libmml.so
 vendor/lib/libOpenCL.so
 vendor/lib/libpqframework.so
@@ -1380,7 +1366,6 @@ vendor/lib64/mt6789/libaiselector.so
 vendor/lib64/mt6789/libdpframework.so
 vendor/lib64/mt6789/libgpudataproducer.so
 vendor/lib64/mt6789/libmtk_drvb.so
-vendor/lib64/mt6789/libnir_neon_driver.so
 vendor/lib64/mt6789/libpq_cust_base.so
 vendor/lib64/mt6789/libpq_prot.so
 vendor/lib64/mt6789/libpqparamparser.so
@@ -1399,7 +1384,6 @@ vendor/lib64/libgralloc_metadata.so
 vendor/lib64/libgralloctypes_mtk.so
 vendor/lib64/libion_mtk.so
 vendor/lib64/libion_ulit.so
-vendor/lib64/libladder.so
 vendor/lib64/libmml.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libpqframework.so
@@ -1429,11 +1413,11 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
--vendor/lib64/mediadrm/libwvdrmengine.so;REPLACEDEP=libprotobuf-cpp-full-3.9.1:libprotobuf-cpp-full-3.9.1-vendorcompat
+-vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libtlcWidevineModularDrm.so
 vendor/lib64/liburee_meta_drmkeyinstall.so
--vendor/lib64/libwvhidl.so;REPLACEDEP=libprotobuf-cpp-full-3.9.1:libprotobuf-cpp-full-3.9.1-vendorcompat
+-vendor/lib64/libwvhidl.so
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
@@ -1449,7 +1433,6 @@ vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_factory_test.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
-vendor/lib64/libtneclient.so
 vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.fpsensor.hardware.fpsensorhidlsvc@2.0.so
 
