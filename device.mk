@@ -478,7 +478,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libunwindstack.vendor \
     libutilscallstack.vendor
-    
+
+# ViPER4Android
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
     libwifi-hal-wrapper \
