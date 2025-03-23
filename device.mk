@@ -407,7 +407,7 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
 
-# Required for QPR3
+# Required libs as of 14 QPR3
 PRODUCT_PACKAGES += \
     liblz4.vendor \
     libmemunreachable.vendor \
@@ -416,6 +416,10 @@ PRODUCT_PACKAGES += \
     libziparchive.vendor \
     libsqlite.vendor \
     libdumpstateutil.vendor
+
+# Required libs as of 15 QPR2
+PRODUCT_PACKAGES += \
+   libbase_shim
 
 # Secure Element
 PRODUCT_PACKAGES += \
