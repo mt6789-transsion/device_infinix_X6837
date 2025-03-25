@@ -1343,65 +1343,8 @@ vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 vendor/etc/meow.cfg
 vendor/etc/AbnormalDisplayLog_dynamic.xml
 vendor/etc/VideoLog_dynamic.xml
-vendor/lib/egl/mt6789/libGLES_mali.so
 vendor/lib/egl/egl.cfg
-vendor/lib/egl/libGLES_meow.so
-vendor/lib/egl/libMEOW_data.so
-vendor/lib/egl/libMEOW_gift.so
-vendor/lib/egl/libMEOW_qt.so
-vendor/lib/egl/libMEOW_trace.so
-vendor/lib/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so
-vendor/lib/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib/hw/mt6789/gralloc.common.so
-vendor/lib/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so
-vendor/lib/hw/mt6789/vulkan.mali.so
 vendor/lib/mt6789/arm.graphics-V1-ndk_platform.so
-vendor/lib/mt6789/libaalservice.so
-vendor/lib/mt6789/libaiselector.so
-vendor/lib/mt6789/libdpframework.so
-vendor/lib/mt6789/libgpudataproducer.so
-vendor/lib/mt6789/libmtk_drvb.so
-vendor/lib/mt6789/libnir_neon_driver.so
-vendor/lib/mt6789/libpq_cust_base.so
-vendor/lib/mt6789/libpq_prot.so
-vendor/lib/mt6789/libpqparamparser.so
-vendor/lib/libDefaultFpsActor.so
-vendor/lib/libFrameRecord.so
-vendor/lib/libNoFpsActor.so
-vendor/lib/libaal_cust.so
-vendor/lib/libaal_key.so
-vendor/lib/libaal_mtk.so
-vendor/lib/libged.so
-vendor/lib/libgpu_aux.so
-vendor/lib/libgpud.so
-vendor/lib/libgralloc_extra.so
-vendor/lib/libgralloc_metadata.so
-vendor/lib/libgralloctypes_mtk.so
-vendor/lib/libion_mtk.so
-vendor/lib/libion_ulit.so
-vendor/lib/libladder.so
-vendor/lib/libmml.so
-vendor/lib/libOpenCL.so
-vendor/lib/libpqframework.so
-vendor/lib/libudf.so
-vendor/lib/vendor.mediatek.hardware.mmagent@1.0.so
-vendor/lib/vendor.mediatek.hardware.mmagent@1.1.so
-vendor/lib/vendor.mediatek.hardware.pq@2.0.so
-vendor/lib/vendor.mediatek.hardware.pq@2.1.so
-vendor/lib/vendor.mediatek.hardware.pq@2.10.so
-vendor/lib/vendor.mediatek.hardware.pq@2.11.so
-vendor/lib/vendor.mediatek.hardware.pq@2.12.so
-vendor/lib/vendor.mediatek.hardware.pq@2.13.so
-vendor/lib/vendor.mediatek.hardware.pq@2.14.so
-vendor/lib/vendor.mediatek.hardware.pq@2.15.so
-vendor/lib/vendor.mediatek.hardware.pq@2.2.so
-vendor/lib/vendor.mediatek.hardware.pq@2.3.so
-vendor/lib/vendor.mediatek.hardware.pq@2.4.so
-vendor/lib/vendor.mediatek.hardware.pq@2.5.so
-vendor/lib/vendor.mediatek.hardware.pq@2.6.so
-vendor/lib/vendor.mediatek.hardware.pq@2.7.so
-vendor/lib/vendor.mediatek.hardware.pq@2.8.so
-vendor/lib/vendor.mediatek.hardware.pq@2.9.so
 vendor/lib64/egl/mt6789/libGLES_mali.so
 vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_data.so
@@ -1411,6 +1354,39 @@ vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6789/gralloc.common.so
+vendor/lib64/hw/mt6789/vulkan.mali.so
+vendor/lib64/hw/hwcomposer.mtk_common.so
+vendor/lib64/mt6789/arm.graphics-V1-ndk_platform.so
+vendor/lib64/mt6789/libaiselector.so
+vendor/lib64/mt6789/libdpframework.so
+vendor/lib64/mt6789/libgpudataproducer.so
+vendor/lib64/mt6789/libnir_neon_driver.so
+vendor/lib64/libDefaultFpsActor.so
+vendor/lib64/libFrameRecord.so
+vendor/lib64/libNoFpsActor.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libcomposer_ext.so
+vendor/lib64/libged.so
+vendor/lib64/libgpu_aux.so
+vendor/lib64/libgpud.so
+vendor/lib64/libgralloc_extra.so
+vendor/lib64/libgralloc_metadata.so
+vendor/lib64/libgralloctypes_mtk.so
+vendor/lib64/libion_mtk.so
+vendor/lib64/libion_ulit.so
+vendor/lib64/libmml.so
+vendor/lib64/libudf.so
+vendor/lib64/libVkLayer_mtk_rt_sdk.so
+vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
+
+# Display (AAL)
+vendor/lib64/mt6789/libaal_cust_func.so
+vendor/lib64/libaal_key.so
+vendor/lib64/libaal_mtk.so
+
+# Display (PQ)
+vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
+vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so
 vendor/lib64/hw/mt6789/vulkan.mali.so
 vendor/lib64/hw/hwcomposer.mtk_common.so
@@ -1473,6 +1449,10 @@ vendor/lib64/liboemcrypto.so
 vendor/lib64/libtlcWidevineModularDrm.so
 vendor/lib64/liburee_meta_drmkeyinstall.so
 -vendor/lib64/libwvhidl.so;REPLACEDEP=libprotobuf-cpp-full-3.9.1:libprotobuf-cpp-full-3.9.1-vendorcompat
+
+# DRVB
+vendor/lib/mt6789/libmtk_drvb.so
+vendor/lib64/mt6789/libmtk_drvb.so
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
@@ -1844,6 +1824,10 @@ vendor/etc/init/android.hardware.security.keymint-service.trustonic.rc
 -vendor/etc/vintf/manifest/android.hardware.security.keymint-service.trustonic.xml
 -vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.trustonic.xml
 -vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.trustonic.xml
+
+# libladder
+vendor/lib/libladder.so
+vendor/lib64/libladder.so
 
 # Media
 vendor/bin/vpud
