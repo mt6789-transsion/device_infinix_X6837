@@ -136,6 +136,8 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i 's/1.1/1.2/' "$2"
             ;;
+       vendor/lib64/ese_spi_nxp.so|\
+       vendor/lib64/nfc_nci_nxp.so|\
        vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so|\
        vendor/lib64/libstfactory-vendor.so|\
        vendor/lib*/libnvram.so|\
@@ -143,7 +145,7 @@ function blob_fixup() {
        vendor/lib*/libtflite_mtk.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
-           ;;
+            ;;
         vendor/lib64/mt6789/lib3a.flash.so|\
         vendor/lib64/mt6789/lib3a.ae.stat.so|\
         vendor/lib64/mt6789/lib3a.sensors.flicker.so|\
@@ -153,22 +155,22 @@ function blob_fixup() {
         vendor/lib64/libSQLiteModule_VER_ALL.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "liblog.so" "${2}"
-           ;;
+            ;;
         vendor/lib64/mt6789/libmnl.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libcutils.so" "${2}"
-           ;;
+            ;;
         vendor/lib64/hw/hwcomposer.mtk_common.so|\
         vendor/lib64/mt6789/libcam.hal3a.v3.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
-           ;;
+            ;;
         vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so|\
         vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so|\
         vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libutils-shim.so" "${2}"
-           ;;
+            ;;
         vendor/lib*/hw/audio.primary.mediatek.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libalsautils.so" "libalsautils-v32.so" "${2}"
