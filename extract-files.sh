@@ -109,7 +109,6 @@ function blob_fixup() {
             ;;
         vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so)
             [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             grep -q libshim_camera_metadata.so "${2}" || "${PATCHELF}" --add-needed libshim_camera_metadata.so "${2}"
             ;;
         vendor/bin/hw/mt6789/camerahalserver)
@@ -163,6 +162,12 @@ function blob_fixup() {
         vendor/lib64/mt6789/libcam.hal3a.v3.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
+           ;;
+        vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so|\
+        vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so|\
+        vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "libutils-shim.so" "${2}"
            ;;
         *)
             return 1
