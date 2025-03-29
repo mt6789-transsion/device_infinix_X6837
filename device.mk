@@ -274,7 +274,9 @@ PRODUCT_PACKAGES += \
     libstagefright_softomx_plugin.vendor \
     libsfplugin_ccodec_utils.vendor \
     libcodec2_soft_common.vendor \
-    libflatbuffers-cpp.vendor
+    libflatbuffers-cpp.vendor \
+    libminijail \
+    libminijail.vendor
 
 PRODUCT_PACKAGES += \
     libchrome.vendor
