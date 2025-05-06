@@ -9,6 +9,7 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
 
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := \
@@ -42,6 +43,8 @@ PRODUCT_PACKAGES += \
     update_verifier \
     otapreopt_script \
     checkpoint_gc
+
+PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # Allow userspace reboots
 $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)

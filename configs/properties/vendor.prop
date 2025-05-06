@@ -70,6 +70,9 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 drm.service.enabled=true
 ro.vendor.mtk_widevine_drm_l1_support=1
 
+# Enable virtual A/B compression
+ro.virtual_ab.compression.threads=true
+
 # FM
 ro.vendor.fm.platform=mt6631_6635
 
