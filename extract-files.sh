@@ -146,6 +146,11 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
             ;;
+        vendor/lib64/hw/audio.primary.mediatek.so)
+            [ "$2" = "" ] && return 0
+            "$PATCHELF" --replace-needed "libalsautils.so" "libalsautils-v31.so" "${2}"
+            grep -q "libstagefright_foundation-v33.so" "${2}" || "$PATCHELF" --add-needed "libstagefright_foundation-v33.so" "${2}"
+            ;;
         *)
             return 1
             ;;
