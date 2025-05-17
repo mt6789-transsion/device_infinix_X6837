@@ -113,7 +113,7 @@ ro.incremental.enable=yes
 
 # HWUI
 debug.hwui.use_hint_manager=true
-debug.hwui.target_cpu_time_percent=30
+debug.hwui.target_cpu_time_percent=60
 
 # Keymaster
 ro.vendor.keymaster_version=5.0
