@@ -273,3 +273,5 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.log.tag.VT=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.VoLTE=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.wlan_assistant=$(VENDOR_LOG_LEVEL)
+    persist.log.tag.netd=$(VENDOR_LOG_LEVEL) \ 
+    persist.log.tag.HWUI=$(VENDOR_LOG_LEVEL)
