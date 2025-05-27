@@ -116,6 +116,7 @@ TARGET_BOARD_PLATFORM := mt6789
 BOARD_HAS_MTK_HARDWARE := true
 
 # Properties
+TARGET_PRODUCT_PROP += $(CONFIGS_PATH)/properties/product.prop
 TARGET_SYSTEM_PROP += $(CONFIGS_PATH)/properties/system.prop
 TARGET_VENDOR_PROP += $(CONFIGS_PATH)/properties/vendor.prop
 
