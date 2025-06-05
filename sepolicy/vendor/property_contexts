@@ -14,6 +14,9 @@ vendor.realiso.disable                               u:object_r:vendor_mtk_camer
 # Camera Watermark
 ro.vendor.transsion.camera_watermark                 u:object_r:vendor_transsion_camera_watermark_support_prop:s0
 
+# Dynamic sensor
+vendor.dynamic_sensor.                          u:object_r:vendor_dynamic_sensor_prop:s0
+
 # Fingerprint
 persist.vendor.fp.sensorUid                          u:object_r:vendor_fingerprint_prop:s0
 persist.vendor.sys.fp.dump_data                      u:object_r:vendor_fingerprint_prop:s0
