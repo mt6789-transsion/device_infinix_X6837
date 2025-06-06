@@ -321,6 +321,13 @@ PRODUCT_PACKAGES += \
     TelephonyResTarget \
     WifiResTarget
 
+# Lineage-Specific Overlays
+PRODUCT_PACKAGES += \
+    ApertureOverlay
+
+PRODUCT_PACKAGES += \
+    NcmTetheringOverlay
+    
 # Permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml \
