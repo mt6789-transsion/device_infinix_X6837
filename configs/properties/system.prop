@@ -22,16 +22,23 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 
-# Dalvik
+# Dexopt
 dalvik.vm.dex2oat64.enabled=true
-
-# Disable vsync for cpu rendered apps
-debug.cpurend.vsync=false
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.boot=verify
+pm.dexopt.first-boot=verify
+pm.dexopt.ab-ota=speed-profile
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
+dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.boot-dex2oat-threads=6
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.image-dex2oat-threads=6
 
 # Display
 debug.sf.enable_transaction_tracing=false
 debug.sf.predict_hwc_composition_strategy=0
-ro.opengles.version=196610
 vendor.debug.sf.display_dejitter=0
 
 # IMS
@@ -43,17 +50,12 @@ persist.dbg.wfc_avail_ovr=1
 sys.ipo.disable=1
 sys.ipo.pwrdncap=2
 
+# Kernel
+ro.kernel.zio=38,108,105,16
+
 # Misc
 Build.BRAND=MTK
 ro.transsion.tranfs.path=/tranfs
-
-# Partition
-ro.product.property_source_order=product,odm,vendor,system
-
-# Perf
-ro.mtk_perf_fast_start_win=1
-ro.mtk_perf_response_time=1
-ro.mtk_perf_simple_start_win=1
 
 # Radio
 vendor.rild.libargs=-d /dev/ttyC0
@@ -68,6 +70,3 @@ ro.mediatek.wlan.p2p=1
 mediatek.wlan.ctia=0
 wifi.tethering.interface=ap0
 wifi.direct.interface=p2p0
-
-# Zygote
-zygote.critical_window.minute=10
