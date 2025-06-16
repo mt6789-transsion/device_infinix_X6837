@@ -64,6 +64,8 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so|\
+        vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so|\
         vendor/lib*/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so|\
         vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service)
             [ "$2" = "" ] && return 0
