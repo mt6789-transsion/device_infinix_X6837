@@ -1,10 +1,9 @@
 # Audio
 audio.offload.disable=true
-vendor.af.dynamic.sleeptime.enable=true
-vendor.af.pausewait.enable=false
-vendor.af.threshold.src_and_effect_count=5
 persist.vendor.anr.dumpthr=1
 ro.audio.usb.period_us=16000
+ro.camera.sound.forced=0
+ro.audio.silent=0
 
 # Bluetooth
 bluetooth.profile.a2dp.source.enabled=true
@@ -22,6 +21,17 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 
+# Connectivity
+mediatek.wlan.ctia=0
+ro.mediatek.wlan.wsc=1
+ro.mediatek.wlan.p2p=1
+wifi.interface=wlan0
+wifi.tethering.interface=ap0
+wifi.direct.interface=p2p0
+vendor.rild.libpath=mtk-ril.so
+vendor.rild.libargs=-d /dev/ttyC0
+persist.sys.radio.force_lte_ca=true
+
 # Dexopt
 dalvik.vm.dex2oat64.enabled=true
 pm.dexopt.install=speed-profile
@@ -36,46 +46,10 @@ dalvik.vm.boot-dex2oat-threads=6
 dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
 dalvik.vm.image-dex2oat-threads=6
 
-# Display
-debug.sf.enable_transaction_tracing=false
-debug.sf.predict_hwc_composition_strategy=0
-ro.opengles.version=196610
-vendor.debug.sf.display_dejitter=0
-
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
-
-# IPO
-sys.ipo.disable=1
-sys.ipo.pwrdncap=2
-
-# Misc
-Build.BRAND=MTK
-ro.transsion.tranfs.path=/tranfs
-
-# Partition
-ro.product.property_source_order=product,odm,vendor,system
-
-# Perf
-ro.mtk_perf_fast_start_win=1
-ro.mtk_perf_response_time=1
-ro.mtk_perf_simple_start_win=1
-
-# Radio
-vendor.rild.libargs=-d /dev/ttyC0
-vendor.rild.libpath=mtk-ril.so
-ro.vendor.mtk_telephony_add_on_policy=0
-persist.sys.radio.force_lte_ca=true
-
-# WiFi
-wifi.interface=wlan0
-ro.mediatek.wlan.wsc=1
-ro.mediatek.wlan.p2p=1
-mediatek.wlan.ctia=0
-wifi.tethering.interface=ap0
-wifi.direct.interface=p2p0
 
 # Zygote
 zygote.critical_window.minute=10
