@@ -140,7 +140,27 @@ function blob_fixup() {
        vendor/lib*/libnvram.so|\
        vendor/lib*/libsysenv.so|\
        vendor/lib*/libtflite_mtk.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
+           ;;
+        vendor/lib64/mt6789/lib3a.flash.so|\
+        vendor/lib64/mt6789/lib3a.ae.stat.so|\
+        vendor/lib64/mt6789/lib3a.sensors.flicker.so|\
+        vendor/lib64/mt6789/lib3a.sensors.color.so|\
+        vendor/lib64/mt6789/libaaa_ltm.so|\
+        vendor/lib64/lib3a.ae.pipe.so|\
+        vendor/lib64/libSQLiteModule_VER_ALL.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "liblog.so" "${2}"
+           ;;
+        vendor/lib64/mt6789/libmnl.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "libcutils.so" "${2}"
+           ;;
+        vendor/lib64/hw/hwcomposer.mtk_common.so|\
+        vendor/lib64/mt6789/libcam.hal3a.v3.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
            ;;
         *)
             return 1
