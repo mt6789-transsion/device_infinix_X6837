@@ -1281,9 +1281,6 @@ vendor/data/camera/watermark/watermark_640x480.nv21
 vendor/data/camera/watermark/watermark_640x480.yuyv
 vendor/data/camera/watermark/watermark_config
 
-# Camera - Patched (RAW)
-vendor/lib64/mt6789/libmtkcam_metastore.so|8f652afbab4e2596be978038678616e66148ba24
-
 # Charger
 bin/kpoc_charger
 etc/init/kpoc_charger.rc
