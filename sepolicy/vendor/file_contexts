@@ -1,7 +1,6 @@
 # BatteryInfo
 /sys/devices/platform/soc/1101a000.i2c/i2c-6/6-006b/power_supply/charger(/.*)?          u:object_r:sysfs_batteryinfo:s0
 /sys/devices/platform/odm/odm:tran_auto_test/power_supply/tran-auto-test(/.*)?           u:object_r:sysfs_batteryinfo:s0
-/(vendor|system/vendor)/bin/chg_sence                                                               u:object_r:chg_sence_exec:s0
 
 # Camera
 /dev/cml421_ois(/.*)?                                                                   u:object_r:cml421_ois_device:s0
