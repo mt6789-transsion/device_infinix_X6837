@@ -177,6 +177,10 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
             "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             ;;
+        vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc)
+            [ "$2" = "" ] && return 0
+            sed -i 's|android.hardware.graphics.allocator@4.0-service-mediatek|mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789|g' "${2}"
+            ;;
         *)
             return 1
             ;;
