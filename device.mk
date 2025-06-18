@@ -79,7 +79,9 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libdynproc \
     libhapticgenerator \
-    libprocessgroup.vendor
+    libprocessgroup.vendor \
+    libminijail \
+    libminijail.vendor
 
 PRODUCT_PACKAGES += \
     DSPVolumeSynchronizer \
