@@ -1266,11 +1266,6 @@ vendor/data/camera/watermark/watermark_640x480.nv21
 vendor/data/camera/watermark/watermark_640x480.yuyv
 vendor/data/camera/watermark/watermark_config
 
-# Charger
-bin/kpoc_charger
-etc/init/kpoc_charger.rc
-lib64/libshowlogo.so
-
 # Connectivity
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
