@@ -140,8 +140,6 @@ function blob_fixup() {
         vendor/lib*/libstfactory-vendor.so|\
         vendor/lib*/libnvram.so|\
         vendor/lib*/libsysenv.so|\
-        vendor/lib64/ese_spi_nxp.so|\
-        vendor/lib64/nfc_nci_nxp.so|\
         vendor/lib*/libtflite_mtk.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
