@@ -40,8 +40,8 @@
 /dev/nxpnfc                                                                                 u:object_r:nfc_device:s0
 
 # Power
-/sys/devices/platform/soc/11017000.i2c/i2c-5/5-0053/power_supply/charger(/.*)?              u:object_r:sysfs_batteryinfo:s0
-/sys/devices/platform/charger/tran_aichg_disable_charger                                    u:object_r:sysfs_aichg_file:s0
+/vendor/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr                      u:object_r:hal_power_default_exec:s0
+/sys/devices/platform/soc/11017000.i2c/i2c-5/5-0053/power_supply/charger(/.*)?                     u:object_r:sysfs_batteryinfo:s0
 
 # Sensor stuff
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.sensors@[0-9]\.[0-9]-service(\.multihal)?  u:object_r:hal_sensors_default_exec:s0
