@@ -487,7 +487,6 @@ vendor/lib64/libmtkcam_3rdparty.thread.so
 vendor/lib64/libmtkcam_pipelinepolicy-aov.so
 vendor/lib64/libmtkhardware_legacy.so
 vendor/lib64/libmtkisp_metadata.so
-vendor/lib64/librgbwlightsensor.so
 vendor/lib64/libSQLiteModule_VER_ALL.so
 vendor/lib64/libTranAutoColorLevel.so
 vendor/lib64/libtrancamJsonConvertor.so
@@ -2106,8 +2105,10 @@ vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.mediatek.V2.0.so
 vendor/lib64/libhfmanager.so
+vendor/lib64/libhfmanagerwrapper.so
 vendor/lib64/libhwm.so
 vendor/lib64/libksensor.so
+vendor/lib64/librgbwlightsensor.so
 
 # Soundtrigger
 vendor/lib64/hw/sound_trigger.primary.default.so
