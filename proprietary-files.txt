@@ -223,13 +223,13 @@ vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Camera 
 vendor/bin/hw/mt6789/camerahalserver
+vendor/bin/mt6789/dumpfaultd.mt6789
+vendor/bin/mt6789/jpegtool
 vendor/bin/hw/vendor.transsion.hardware.trancam.trancamserver@1.0-service
 vendor/etc/init/camerahalserver.rc
 vendor/etc/init/vendor.transsion.hardware.trancam.trancamserver@1.0-service.rc
 -vendor/etc/vintf/manifest/manifest_cameraprovider.xml
 -vendor/etc/vintf/manifest/vendor.transsion.hardware.trancam.trancamserver@1.0.xml
-vendor/lib/vendor.mediatek.hardware.mdmonitor@1.0.so
-vendor/lib/vendor.transsion.hardware.trancam.trancamserver@1.0.so
 vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.atms@1.0-impl.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
