@@ -851,10 +851,6 @@ on property:persist.vendor.mediatek.fast_charging.support=*
 on property:sys.boot_completed=1
     restart android-hardware-media-c2-hal-1-2
 
-# FPSGO FBT Game
-on boot
-    insmod /vendor/lib/modules/fpsgo.ko
-
 # OTG
 on property:sys.boot_completed=1
     write /sys/devices/platform/odm/odm:tran_battery/OTG_CTL 1
