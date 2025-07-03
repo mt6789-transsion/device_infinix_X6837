@@ -180,6 +180,11 @@ ro.vendor.powerhal.gsi_watermark=500
 ro.vendor.powerhal_fling_mode_support=1
 vendor.perf.framepacing.enable=1
 
+# Power
+vendor.powerhal.interaction.offset=0
+vendor.powerhal.interaction.min=50
+vendor.powerhal.interaction.max=150
+
 # PQ
 ro.vendor.mtk_pq_color_mode=1
 ro.vendor.mtk_pq_support=2
