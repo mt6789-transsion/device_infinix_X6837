@@ -304,6 +304,16 @@
         "0,1,2,3,4,5,6,7"
       ],
       "Type": "Property"
+    },
+    {
+      "Name": "DoubleTapToWake",
+      "Path": "/proc/gesture_function",
+      "Values": [
+        "cc0",
+        "cc1"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -454,6 +464,12 @@
       "Node": "GPUMinFreq",
       "Duration": 0,
       "Value": "801000000"
+    },
+    {
+      "PowerHint": "DOUBLE_TAP_TO_WAKE",
+      "Node": "DoubleTapToWake",
+      "Duration": 0,
+      "Value": "cc1"
     }
   ]
 }
