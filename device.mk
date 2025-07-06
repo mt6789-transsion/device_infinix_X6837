@@ -421,12 +421,9 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     libsensorndkbridge \
-    android.hardware.sensors@1.0.vendor \
-    android.hardware.sensors@2.1.vendor \
     android.frameworks.sensorservice@1.0.vendor \
-    android.hardware.sensors@2.1-service.multihal \
+    android.hardware.sensors-service.transsion \
     sensors.dynamic_sensor_hal \
-    android.hardware.sensors@2.0-ScopedWakelock.vendor \
     libshim_sensors \
     libpower.vendor 
 
