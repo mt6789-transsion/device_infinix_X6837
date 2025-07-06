@@ -456,10 +456,6 @@ PRODUCT_PACKAGES += \
 
 # ViPER4Android
 $(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
-    
-# Vendor service manager
-PRODUCT_PACKAGES += \
-    vndservicemanager
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -488,8 +484,8 @@ PRODUCT_PACKAGES += \
 
 # vndservice
 PRODUCT_PACKAGES += \
-   vndservicemanager \
-   vndservice
+    vndservicemanager \
+    vndservice
     
 # Wi-Fi
 PRODUCT_PACKAGES += \
