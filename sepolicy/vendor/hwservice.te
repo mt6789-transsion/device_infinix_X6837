@@ -1,8 +1,0 @@
-# Camera
-type hal_trancamserver_hwservice, hwservice_manager_type;
-
-# FPSensor
-type fp_ext_svc2_service, hwservice_manager_type;
-
-# NXP NFC
-type nxpnfc_hwservice, hwservice_manager_type;
