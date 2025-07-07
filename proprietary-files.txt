@@ -2040,9 +2040,6 @@ vendor/lib64/libtranlog.so
 vendor/lib64/vendor.transsion.hardware.tranlog@1.0.so
 vendor/lib64/vendor.transsion.hardware.tranlogconfig@1.0.so
 
-# Vibrator
-vendor/lib64/libvibrator.so
-
 # Wi-Fi
 vendor/bin/wlan_assistant
 vendor/etc/init/init.wlan_drv.rc
