@@ -311,13 +311,6 @@ PRODUCT_PACKAGES += \
     TetheringConfigTarget \
     WifiResTarget
 
-# Lineage-Specific Overlays
-PRODUCT_PACKAGES += \
-    ApertureOverlay
-
-PRODUCT_PACKAGES += \
-    NcmTetheringOverlay
-    
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
