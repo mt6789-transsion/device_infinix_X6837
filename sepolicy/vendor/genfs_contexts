@@ -1,14 +1,7 @@
-  # Battery
+# Battery
 genfscon sysfs /devices/platform/odm/odm:usb_switch/power_supply/usb_switch                          u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/mtk_ctd/power_supply                                                u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt6358-chrdet/power_supply u:object_r:sysfs_batteryinfo:s0
-
-# Charging
-genfscon sysfs /devices/platform/mtk_ctd/power_supply                          u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/odm/odm:tran_auto_test/power_supply           u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/odm/odm:usb_switch/power_supply               u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/soc/11015000.i2c/i2c-3/3-006f/power_supply    u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/soc/11017000.i2c/i2c-5/5-0053/power_supply    u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/soc/11017000.i2c/i2c-5/5-006f/power_supply    u:object_r:sysfs_batteryinfo:s0
 
 # Extcon
 genfscon sysfs /devices/platform/extcon_usb/extcon/extcon0/cable.0/name             u:object_r:sysfs_extcon:s0
@@ -36,9 +29,7 @@ genfscon sysfs /devices/virtual/tele_torch/tele_torch/tele_torch_level    u:obje
 genfscon sysfs /devices/virtual/torch/torch/torch_level                   u:object_r:sysfs_torch_file:s0
 genfscon sysfs /devices/virtual/wide_torch/wide_torch/wide_torch_level    u:object_r:sysfs_wide_torch_file:s0
 
-# Wakeup (https://lkml.org/lkml/2019/8/6/1275)
-genfscon sysfs /devices/platform/1a000000.camisp_legacy/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/charger/power_supply/mtk-mst-div-chg/wakeup u:object_r:sysfs_wakeup:s0
+# Label wakeup nodes
 genfscon sysfs /devices/platform/charger/power_supply/mtk-slv-div-chg/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/extcon_usb/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/mtk_ctd/power_supply/mtk_charger_type/wakeup u:object_r:sysfs_wakeup:s0
