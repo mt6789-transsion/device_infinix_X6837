@@ -37,7 +37,8 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/lib*/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so', 'vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service'): blob_fixup()
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so')
         .replace_needed('libbinder.so', 'libbinder-v32.so')
-        .replace_needed('libutils.so', 'libutils-v32.transsion.so'),
+        .replace_needed('libutils.so', 'libutils-v32.so')
+        .add_needed('libprocessgroup_shim.so'),
 
     'vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so': blob_fixup()
         .add_needed('libshim_camera_metadata.so'),
@@ -91,11 +92,11 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so', 'vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so'): blob_fixup()
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so')
         .replace_needed('libbinder.so', 'libbinder-v32.so')
-        .replace_needed('libutils.so', 'libutils-v32.transsion.so')
+        .replace_needed('libutils.so', 'libutils-v32.so')
         .add_needed('libprocessgroup_shim.so')
         .add_needed('libutils-shim.so'),
 
-    ('vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so', 'vendor/lib64/mt6789/libeffect_hal.so', 'vendor/lib64/libMegviiHum.so'): blob_fixup()
+    'vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_createFromHandle')
         .clear_symbol_version('AHardwareBuffer_describe')
@@ -104,7 +105,7 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
 
-    'vendor/lib64/mt6789/libtranssion_bodybeauty.so': blob_fixup()
+    ('vendor/lib64/mt6789/libtranssion_bodybeauty.so', 'vendor/lib64/mt6789/libeffect_hal.so'): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_createFromHandle')
         .clear_symbol_version('AHardwareBuffer_describe')
@@ -113,6 +114,15 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_lockPlanes')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
+
+    ('vendor/lib64/mt6789/lib3a.flash.so', 'vendor/lib64/mt6789/lib3a.ae.stat.so', 'vendor/lib64/mt6789/lib3a.sensors.flicker.so', 'vendor/lib64/mt6789/lib3a.sensors.color.so', 'vendor/lib64/mt6789/libaaa_ltm.so', 'vendor/lib64/libSQLiteModule_VER_ALL.so'): blob_fixup()
+        .add_needed('liblog.so'),
+
+    'vendor/lib64/mt6789/libmnl.so': blob_fixup()
+        .add_needed('libcutils.so'),
+
+    'vendor/lib64/libmorpho_video_stabilizer.so': blob_fixup()
+        .add_needed('libutils-v32.so'),
 
 }  # fmt: skip
 

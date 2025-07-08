@@ -21,7 +21,6 @@ vendor/lib64/vendor.mediatek.hardware.apuware.hmp@1.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 
 # Audio
-vendor/lib/hw/awinic.audio.effect.so
 vendor/lib/libbwc.so
 vendor/lib/libkaraoke.so
 vendor/lib/libladder.so
@@ -53,7 +52,7 @@ vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtkshifter_vendor.so
 vendor/lib64/librt_extamp_intf.so
-vendor/lib64/libspeech_enh_lib.so
+vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/libTransNS.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
@@ -678,7 +677,7 @@ vendor/lib64/mt6789/libdenoise.so
 vendor/lib64/mt6789/libdip_drv.so
 vendor/lib64/mt6789/libdip_postproc.so
 vendor/lib64/mt6789/libeffecthal.base.so
-vendor/lib64/mt6789/libeffect_hal.so
+vendor/lib64/mt6789/libeffect_hal.so;DISABLE_CHECKELF
 vendor/lib64/mt6789/libeyedetector.so
 vendor/lib64/mt6789/libfacesattribute.so
 vendor/lib64/mt6789/libfeature.face.so
@@ -698,7 +697,7 @@ vendor/lib64/mt6789/libitdfacebeauty.so
 vendor/lib64/mt6789/liblpcnr.so
 vendor/lib64/mt6789/libmagicsky_64.so
 vendor/lib64/mt6789/libmorpho_HDSR.so
-vendor/lib64/mt6789/libmorpho_video_stabilizer.so
+vendor/lib64/mt6789/libmorpho_video_stabilizer.so;DISABLE_CHECKELF
 vendor/lib64/mt6789/libmpbase.so
 vendor/lib64/mt6789/libmsnr.so
 vendor/lib64/mt6789/libNvLutEffect.so
@@ -1370,7 +1369,7 @@ vendor/etc/init/vendor.goodix.rc
 -vendor/etc/vintf/manifest/manifest_chipone.xml
 vendor/lib64/hw/fpsensor_fingerprint.default.so
 vendor/lib64/libfp_ext_svc2.so
-vendor/lib64/hw/gf_fingerprint.default.so
+vendor/lib64/hw/gf_fingerprint.default.so;FIX_SONAME
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_factory_test.so
 vendor/lib64/libgf_hal.so
