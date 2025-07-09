@@ -26,6 +26,10 @@ allow mtk_hal_camera {
 
 binder_call(mtk_hal_camera, trancamserver)
 
+allow mtk_hal_camera sysfs_dt_firmware_android:dir search;
+allow mtk_hal_camera sysfs_dt_firmware_android:file r_file_perms;
+allow mtk_hal_camera property_socket:sock_file write;
+
 get_prop(mtk_hal_camera, vendor_persist_camera_prop)
 get_prop(mtk_hal_camera, vendor_transsion_camera_watermark_support_prop)
 r_dir_file(mtk_hal_camera, sysfs_sensor)
