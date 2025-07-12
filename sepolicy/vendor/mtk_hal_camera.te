@@ -11,8 +11,10 @@ allow mtk_hal_camera {
 
 allow mtk_hal_camera { 
     sysfs_sub_torch_file
+    sysfs_tele_torch_file
     sysfs_torch_file
     sysfs_tran_cam_file
+    sysfs_wide_torch_file
     tran_imgsensor_info_file
     transsion_camera_data_file
     transsion_camera_data_meghumaneffect_file

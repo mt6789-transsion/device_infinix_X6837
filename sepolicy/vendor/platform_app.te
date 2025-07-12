@@ -1,2 +1,3 @@
 #============= platform_app ==============
 allow platform_app nfc_service:service_manager find;
+allow platform_app { sysfs_sub_torch_file sysfs_torch_file sysfs_tele_torch_file sysfs_tran_cam_file sysfs_wide_torch_file }:file rw_file_perms;

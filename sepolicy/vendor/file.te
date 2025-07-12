@@ -32,7 +32,9 @@ type sysfs_aichg_file, fs_type, sysfs_type;
 
 # Torch
 type sysfs_sub_torch_file, fs_type, sysfs_type;
+type sysfs_tele_torch_file, fs_type, sysfs_type;
 type sysfs_torch_file, fs_type, sysfs_type;
+type sysfs_wide_torch_file, fs_type, sysfs_type;
 
 # Touch
 type proc_main_game_state, fs_type, proc_type, sysfs_type;
