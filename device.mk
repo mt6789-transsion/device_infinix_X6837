@@ -319,6 +319,7 @@ PRODUCT_PACKAGES += \
     SettingsProviderResTarget \
     SystemUIResTarget \
     TetheringConfigTarget \
+    OpenDeltaOverlayMT6789 \
     WifiResTarget
 
 # Permissions
