@@ -293,6 +293,11 @@ ro.vendor.radio.max.multisim=dsds
 ro.vendor.sim_me_lock_mode=3
 telephony.active_modems.max_count=2
 
+# RKPD
+remote_provisioning.enable_rkpd=true
+remote_provisioning.hostname=remoteprovisioning.googleapis.com
+remote_provisioning.connect_timeout_millis=2000
+
 # Sensor
 ro.vendor.init.sensor.rc=init.sensor_2_0.rc
 ro.vendor.mtk.sensor.support=yes
