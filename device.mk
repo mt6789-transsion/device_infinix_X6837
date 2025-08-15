@@ -280,7 +280,9 @@ PRODUCT_PACKAGES += \
     libflatbuffers-cpp.vendor
 
 PRODUCT_PACKAGES += \
-    libchrome.vendor
+    libchrome.vendor \
+    libminijail:64 \
+    libminijail.vendor:64
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy) \
