@@ -91,7 +91,7 @@ ro.hardware.gatekeeper=trustonic
 # Graphics
 debug.hwui.skia_atrace_enabled=false
 debug.mediatek.disp_decompress=1
-debug.renderengine.backend=skiaglthreaded
+debug.renderengine.backend=skiagl
 debug.sf.disable_backpressure=1
 graphics.gpu.profiler.support=true
 ro.hardware.egl=meow
@@ -104,6 +104,8 @@ ro.vendor.mtk_aod_support=1
 ro.vendor.mtk_svp_on_mtee_support=2
 ro.vendor.smvr.p2batch.hd=4
 ro.vendor.smvr.p2batch.vga=8
+service.sf.prime_shader_cache=0
+persist.vendor.sys.mtkaal.function=0
 
 # GPS
 ro.vendor.gps.chrdev=gps_drv_stp
@@ -286,12 +288,13 @@ debug.sf.use_phase_offsets_as_durations=1
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_HDR_display=false
 ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 ro.surface_flinger.primary_display_orientation=ORIENTATION_0
 ro.surface_flinger.protected_contents=true
-ro.surface_flinger.set_display_power_timer_ms=1000
-ro.surface_flinger.set_idle_timer_ms=100
-ro.surface_flinger.set_touch_timer_ms=200
+ro.surface_flinger.wcg_composition_dataspace=143261696
+ro.surface_flinger.uclamp.min=130
+ro.surface_flinger.set_idle_timer_ms=3000
+ro.surface_flinger.set_touch_timer_ms=3000
+ro.surface_flinger.max_frame_buffer_acquired_buffers=4
 ro.surface_flinger.use_content_detection_for_refresh_rate=true
 
 # Storage
