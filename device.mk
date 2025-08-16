@@ -101,6 +101,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor
 
+PRODUCT_PACKAGES += \
+   vendor.mediatek.hardware.bluetooth.audio@2.1.vendor:64 \
+   vendor.mediatek.hardware.bluetooth.audio@2.2.vendor:64
+
 # Boot control HAL
 PRODUCT_PACKAGES += \
     com.android.hardware.boot \
@@ -113,7 +117,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6.vendor
 
 PRODUCT_PACKAGES += \
-    libshim_camera_metadata \
+    libcamera_metadata_shim \
     libdng_sdk.vendor \
     libexpat.vendor \
     libexif.vendor \
@@ -157,10 +161,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1.vendor:64
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -327,7 +327,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
     frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml \
     frameworks/native/data/etc/android.hardware.faketouch.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.faketouch.xml \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
@@ -388,10 +387,6 @@ PRODUCT_COPY_FILES += \
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Power-off Alarm
-PRODUCT_PACKAGES += \
-    PowerOffAlarm
-
 # Properties
 include $(LOCAL_PATH)/vendor_logtag.mk
 
@@ -429,8 +424,8 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor:64 \
     android.hardware.sensors-service.multihal \
     android.hardware.sensors@2.0-subhal-impl-1.0 \
-    android.hardware.sensors@2.0-ScopedWakelock.vendor:64
-    libshim_sensors \
+    android.hardware.sensors@2.0-ScopedWakelock.vendor:64 \
+    libshim_sensors
     libpower.vendor 
 
 PRODUCT_COPY_FILES += \
@@ -475,10 +470,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libbase_shim \
     libprocessgroup_shim \
+    libutils_shim \
     libstagefright_foundation-v33 \
+    libbinder-v32 \
+    libutils-v32 \
+    libhidlbase-v32 \
+    libbinder-v31 \
     libutils-v31 \
-    libhidlbase-v31 \
-    libbinder-v31
+    libhidlbase-v31
 
 PRODUCT_PACKAGES += \
     libunwindstack.vendor \

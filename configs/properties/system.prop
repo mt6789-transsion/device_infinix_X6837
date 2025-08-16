@@ -114,3 +114,9 @@ wifi.direct.interface=p2p0
 # Zygote
 zygote.critical_window.minute=10
 ro.zygote.preload.enable=0
+
+ro.product.marketname=Infinix HOT 40 Pro
+ro.infinity.soc=Mediatek Helio G99
+ro.infinity.battery=5000 mAh
+ro.infinity.display=1080 x 2460, 120 Hz
+ro.infinity.camera=Back 108MP + Front 32 MP
