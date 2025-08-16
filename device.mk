@@ -476,11 +476,9 @@ PRODUCT_PACKAGES += \
     libbase_shim \
     libprocessgroup_shim \
     libstagefright_foundation-v33 \
-    libutils-shim \
-    libutils-v32.transsion \
-    libutils-v32 \
-    libhidlbase-v32 \
-    libbinder-v32
+    libutils-v31 \
+    libhidlbase-v31 \
+    libbinder-v31
 
 PRODUCT_PACKAGES += \
     libunwindstack.vendor \

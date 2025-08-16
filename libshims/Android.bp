@@ -10,12 +10,3 @@ cc_library {
     srcs: ["libshim_camera_metadata.cpp"],
     vendor: true
 }
-
-cc_library_shared {
-    name: "libutils-shim",
-    shared_libs: ["libutils-v32.transsion"],
-    compile_multilib: "64",
-    header_libs: ["libutils_headers"],
-    srcs: ["libutils/String16.cpp"],
-    vendor: true,
-}

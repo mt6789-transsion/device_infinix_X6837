@@ -35,9 +35,9 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.gnss-V1-ndk_platform.so', 'android.hardware.gnss-V1-ndk.so'),
 
     ('vendor/lib*/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so', 'vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service'): blob_fixup()
-        .replace_needed('libhidlbase.so', 'libhidlbase-v32.so')
-        .replace_needed('libbinder.so', 'libbinder-v32.so')
-        .replace_needed('libutils.so', 'libutils-v32.so')
+        .replace_needed('libhidlbase.so', 'libhidlbase-v31.so')
+        .replace_needed('libbinder.so', 'libbinder-v31.so')
+        .replace_needed('libutils.so', 'libutils-v31.so')
         .add_needed('libprocessgroup_shim.so'),
 
     'vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so': blob_fixup()
@@ -86,15 +86,28 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libprocessgroup_shim.so'),
 
     'vendor/bin/hw/mtkfusionrild': blob_fixup()
-        .add_needed('libutils-v32.so'),
+        .add_needed('libutils-v31.so'),
 
-    ('vendor/lib64/mt6789/libmtkcam_stdutils.so', 'vendor/bin/hw/mt6789/camerahalserver', 'vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so',
-     'vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so', 'vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so'): blob_fixup()
-        .replace_needed('libhidlbase.so', 'libhidlbase-v32.so')
-        .replace_needed('libbinder.so', 'libbinder-v32.so')
-        .replace_needed('libutils.so', 'libutils-v32.so')
-        .add_needed('libprocessgroup_shim.so')
-        .add_needed('libutils-shim.so'),
+    ('vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so', 'vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so'): blob_fixup()
+        .replace_needed('libhidlbase.so', 'libhidlbase-v31.so')
+        .replace_needed('libbinder.so', 'libbinder-v31.so')
+        .replace_needed('libutils.so', 'libutils-v31.so'),
+
+    'vendor/lib64/mt6789/libmtkcam_stdutils.so': blob_fixup()
+        .replace_needed('libhidlbase.so', 'libhidlbase-v31.so')
+        .replace_needed('libbinder.so', 'libbinder-v31.so')
+        .replace_needed('libutils.so', 'libutils-v31.so'),
+        
+    'vendor/bin/hw/mt6789/camerahalserver': blob_fixup()
+        .replace_needed('libhidlbase.so', 'libhidlbase-v31.so')
+        .replace_needed('libbinder.so', 'libbinder-v31.so')
+        .replace_needed('libutils.so', 'libutils-v31.so'),
+
+    'vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so': blob_fixup()
+        .replace_needed('libhidlbase.so', 'libhidlbase-v31.so')
+        .replace_needed('libbinder.so', 'libbinder-v31.so')
+        .replace_needed('libutils.so', 'libutils-v31.so')    
+        .add_needed('libcamera_metadata_shim.so'),
 
     'vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
@@ -122,7 +135,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libcutils.so'),
 
     'vendor/lib64/libmorpho_video_stabilizer.so': blob_fixup()
-        .add_needed('libutils-v32.so'),
+        .add_needed('libutils-v31.so'),
 
 }  # fmt: skip
 
