@@ -91,6 +91,23 @@ on property:sys.boot_completed=1
     write /sys/kernel/tracing/instances/mmstat/tracing_on 1
     write /dev/cpuctl/top-app/cpu.shares 5120
     write /dev/cpuctl/foreground/cpu.shares 4196
+    
+    # Disable GED KPI
+    write /sys/module/sspm_v3/holders/ged/parameters/is_GED_KPI_enabled 0
+    chmod 0444 /sys/module/sspm_v3/holders/ged/parameters/is_GED_KPI_enabled
+
+on property:sys.boot_completed=1
+    # Disable statsd service to prevent additional battery drain
+    stop statsd
+
+service statsd /apex/com.android.os.statsd/bin/statsd
+    class main
+    socket statsdw dgram+passcred 0222 statsd statsd
+    user statsd
+    group statsd log
+    task_profiles ProcessCapacityHigh HighEnergySaving
+    override
+    disabled
 
 on boot
     # Stop Serial Console
@@ -99,8 +116,3 @@ on boot
     # Change owner for GED KPI
     chown system system /sys/module/sspm_v3/holders/ged/parameters/is_GED_KPI_enabled
     chmod 0644 /sys/module/sspm_v3/holders/ged/parameters/is_GED_KPI_enabled
-
-on property:sys.boot_completed=1
-    # Disable GED KPI
-    write /sys/module/sspm_v3/holders/ged/parameters/is_GED_KPI_enabled 0
-    chmod 0444 /sys/module/sspm_v3/holders/ged/parameters/is_GED_KPI_enabled
