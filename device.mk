@@ -473,6 +473,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libbase_shim \
     libprocessgroup_shim \
+    libcamera_metadata_shim \
     libstagefright_foundation-v33 \
     libutils-v32 \
     libhidlbase-v32 \
