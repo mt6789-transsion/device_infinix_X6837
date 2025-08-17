@@ -113,7 +113,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6.vendor
 
 PRODUCT_PACKAGES += \
-    libshim_camera_metadata \
     libdng_sdk.vendor \
     libexpat.vendor \
     libexif.vendor \
@@ -475,20 +474,21 @@ PRODUCT_PACKAGES += \
     libbase_shim \
     libprocessgroup_shim \
     libstagefright_foundation-v33 \
-    libutils-shim \
-    libutils-v32.transsion \
     libutils-v32 \
     libhidlbase-v32 \
     libbinder-v32
 
 PRODUCT_PACKAGES += \
+    libutils-v31 \
+    libhidlbase-v31 \
+    libbinder-v31 \
     libunwindstack.vendor \
     libutilscallstack.vendor
 
 # vndservice
 PRODUCT_PACKAGES += \
-   vndservicemanager \
-   vndservice
+    vndservicemanager \
+    vndservice
     
 # Wi-Fi
 PRODUCT_PACKAGES += \
