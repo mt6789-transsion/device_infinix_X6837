@@ -254,8 +254,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	LineageApertureOverlayTarget \
     LineageDialerOverlayTarget \
-    LineageSettingsOverlayTarget \
-    PowerOffAlarmOverlayTarget
+    LineageSettingsOverlayTarget
 
 # Linker config
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
@@ -390,10 +389,6 @@ PRODUCT_COPY_FILES += \
 
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
-# Power-off Alarm
-PRODUCT_PACKAGES += \
-    PowerOffAlarm
 
 # Properties
 include $(LOCAL_PATH)/vendor_logtag.mk
