@@ -206,7 +206,6 @@ lib64/lib3a.sensors.color.so
 lib64/lib3a.sensors.flicker.so
 lib64/libaaa_ltm.so
 lib64/libaaa_ltmx.so
-lib64/libaal_cust_func.so
 lib64/libacdk.so
 lib64/libaiawb_moon.so
 lib64/libaiawb_p1ggm.so

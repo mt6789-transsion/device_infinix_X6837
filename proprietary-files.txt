@@ -649,7 +649,6 @@ vendor/lib64/mt6789/lib3a.sensors.color.so
 vendor/lib64/mt6789/lib3a.sensors.flicker.so
 vendor/lib64/mt6789/libaaa_ltm.so
 vendor/lib64/mt6789/libaaa_ltmx.so
-vendor/lib64/mt6789/libaal_cust_func.so
 vendor/lib64/mt6789/libaiawb_moon.so
 vendor/lib64/mt6789/libaiawb_p1ggm.so
 vendor/lib64/mt6789/libaiawb_sun.so
