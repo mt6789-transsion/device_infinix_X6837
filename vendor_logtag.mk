@@ -278,4 +278,5 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.log.tag.FrameTracker=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.C2MtkBufferManager=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.android.hardware.graphics.composer@2.3-service=$(VENDOR_LOG_LEVEL) \
-    persist.log.tag.surfaceflinger$(VENDOR_LOG_LEVEL)
+    persist.log.tag.surfaceflinger$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.lights_service_transsion_rust=$(VENDOR_LOG_LEVEL)
