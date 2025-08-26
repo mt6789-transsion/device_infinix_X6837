@@ -1519,35 +1519,37 @@ vendor/lib64/mt6789/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
 vendor/lib64/librpc.so
 vendor/lib64/libviagpsrpc.so
 
-# IMS - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys
--system_ext/framework/mediatek-common.jar:framework/mediatek-common.jar|895c6819d00deb385675cc7b90f073d0b6fbd29d
--system_ext/framework/mediatek-framework.jar:framework/mediatek-framework.jar|a9789fd904f4b0643a3257e798318faabf342477
--system_ext/framework/mediatek-ims-base.jar:framework/mediatek-ims-base.jar|a6f7ae937de5b9c25e41af8c15db2717a31a6e97
--system_ext/framework/mediatek-ims-common.jar:framework/mediatek-ims-common.jar|8fc8f9dbbe56a309fa620222430cc854143672fb
--system_ext/framework/mediatek-ims-extension-plugin.jar:framework/mediatek-ims-extension-plugin.jar|4562720d65136b189d661f248fd3170a749cada3
--system_ext/framework/mediatek-telecom-common.jar:framework/mediatek-telecom-common.jar|686eaf0a472f44194116a0861944483cd9b09a38
--system_ext/framework/mediatek-telephony-base.jar:framework/mediatek-telephony-base.jar|f66b872e413d16fc29d22ead4e94984f84be94e9
--system_ext/framework/mediatek-telephony-common.jar:framework/mediatek-telephony-common.jar|869c6918a945ecb87d8b30ec5ca4056d6b863099
-system_ext/bin/vtservice|59adc81ee1ad1f3fb4942cd6e8e7100325002eb2
-system_ext/etc/init/init.vtservice.rc|50a2249906edc06059b443513db47a2ddc0490dc
-system_ext/lib64/libcomutils.so|6d9cd979f33ef01cb26861a38a59e76e1c2a3acb
-system_ext/lib64/libimsma_adapt.so|b95939f797ba52d87bb9fa6ebf356e0fb4fcfe56
-system_ext/lib64/libimsma_rtp.so|02b33fba68211362b439bb05a965ba6e01fa3ea0
-system_ext/lib64/libimsma_socketwrapper.so|1f9b83322c41e5b0a7b3130f74a38ddb14f578d8
-system_ext/lib64/libimsma.so|547ffdd8a8d57d6624b69eb27ac0e1642aab09bc
-system_ext/lib64/libmtk_vt_service.so|c46d43d49fb35e21cb34cdea1f33ad4b964e2f22
-system_ext/lib64/libmtk_vt_wrapper.so|b6f8737a084431cdd8d77c9188e176b7e9364876
-system_ext/lib64/libsignal.so|0f55bb64c660fe4cda2b695121580b054f026e73
-system_ext/lib64/libsink.so|15cb9262fd9e52cd29086f602bc3dafb52ab40b5|94972e8c36b576cbe74ecefbe72526714c1e1e16
-system_ext/lib64/libsource.so|8e702370bfd7bce526f18e31e71ed8a9942b2c38
-system_ext/lib64/libvcodec_cap.so|0165b65cd33fd3905ef3f569ff36bf119b27c13d
-system_ext/lib64/libvcodec_capenc.so|3b5e76522a7331248c2864493fdade2bdf73c4c3
-system_ext/lib64/libvt_avsync.so|632cb05532ef2e022072d91bff3c1ae47c888b7e
-system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so|b4733a99049d5162e41955bca80cc78b8ca76c53
-system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|1385634094de90c59b9f689d313b6b3ee8770efe
-
-# IMS (App) - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys (patched)
--system_ext/priv-app/ImsService/ImsService.apk:priv-app/ImsService/ImsService.apk|62e6a0c457812366623630dffef27b0bf5ca7fad
+# IMS - from plato-user 15 SP1A.210812.016 OS2.0.202.0.VLQMIXM release-keys
+system_ext/bin/vtservice|21e520f34b4c8907272e5844be05718dd6e7db1a
+system_ext/etc/init/init.vtservice.rc|d1bad63ed1e5dc8cbf02c5ec37022a7753330729|d1bad63ed1e5dc8cbf02c5ec37022a7753330729
+system_ext/framework/mediatek-common.jar:system/framework/mediatek-common.jar;BOOT_JAR|59196f4c5d7b5195be6ebfa3d845fc57122d5a51
+system_ext/framework/mediatek-framework.jar:system/framework/mediatek-framework.jar;BOOT_JAR|9ccf6d99f34045b4f5cca965233c48e6255fbd17
+system_ext/framework/mediatek-ims-base.jar:system/framework/mediatek-ims-base.jar;BOOT_JAR|22fe952d7d5ec6191c5409a1c6076e99c4187e52
+system_ext/framework/mediatek-ims-common.jar:system/framework/mediatek-ims-common.jar;BOOT_JAR|e990f93721e97dd51dfe85ed2039b8452f6248ee
+system_ext/framework/mediatek-ims-extension-plugin.jar:system/framework/mediatek-ims-extension-plugin.jar|faac633fafba868f5579cef233188799fa2f1403
+system_ext/framework/mediatek-telecom-common.jar:system/framework/mediatek-telecom-common.jar;BOOT_JAR|52e82ee8a6bece35937046d93c446879f80e50d5
+system_ext/framework/mediatek-telephony-base.jar:system/framework/mediatek-telephony-base.jar;BOOT_JAR|47446db413583a2051ba286b23dd8d0e9c020b73
+system_ext/framework/mediatek-telephony-common.jar:system/framework/mediatek-telephony-common.jar;BOOT_JAR|e5f01d83a4bb99b1a06203f202fdc762bd8974da
+system_ext/lib64/libcomutils.so|094b013e5acfe3575d3dc43f29bd73cf72ad0c6b
+system_ext/lib64/libimsma.so|f2b80fce1da7d06b28842ce52d4ab044b3f3beca|f2b80fce1da7d06b28842ce52d4ab044b3f3beca
+system_ext/lib64/libimsma_adapt.so|3c1d51f2203b86c11a0123454986ec41b37e426a
+system_ext/lib64/libimsma_rtp.so|e0378d8e99597eb9bcd3057dcc12f67d370b15e8
+system_ext/lib64/libimsma_socketwrapper.so|0e8cb5f32de6eddfe374ccf149460dfe9850da2c
+system_ext/lib64/libmtk_vt_service.so|a2c2625073876034dd82921b96ba7955dd74edb7
+system_ext/lib64/libmtk_vt_wrapper.so|8cfccf4f5f0d4ca1f8e5b4b895b063c2daf7ce91
+system_ext/lib64/libsignal.so|b37d2fbc8d7e93b3f377b9f636f1865077aa9718
+system_ext/lib64/libsink.so:system_ext/lib64/libsink-mtk.so;FIX_SONAME|d6d455af9d60b7788686306912eb2f0076b0a519|d6d455af9d60b7788686306912eb2f0076b0a519
+system_ext/lib64/libsource.so|232b15796e61cec0f5f2d1edc565f30e3343db92|232b15796e61cec0f5f2d1edc565f30e3343db92
+system_ext/lib64/libvcodec_cap.so|b6ec9d9181deb3f4ae5811a5bedb713e97d70091
+system_ext/lib64/libvcodec_capenc.so|415f9bb9b523089d1a640d261479f561e9ef12a1
+system_ext/lib64/libvt_avsync.so|14938835ae9c9d070796988b9cc719247bd9b9da
+system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so|797ce5497a2a5e032f0ec054f6d158b43a8c82e8
+system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|2e343a53014720feb73246adcd787bdd748ed54a
+system_ext/priv-app/ImsService/ImsService.apk|ae23511c662674d2f9ac4aa2b286640486c208aa
+vendor/bin/hw/vtservice_hidl|e18704a2a1f5527bcb328e8a76031a0e9a89b88d
+vendor/etc/init/init.vtservice_hidl.rc|f2e992214ed5bb99c2c2a135cf1f0996dba8a8a0
+vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so|7de8b087aef2b7b734d23d71428d45ab4deea303
+vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor|2b20197891d43f85f93e09b5ca7dd6e7aa4fee62
 
 # Keymaster
 vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
@@ -1811,12 +1813,10 @@ vendor/lib/libvolte_core_shr.so
 vendor/lib/libvolte_xdmc_shr.so
 vendor/lib/libwo.so
 vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
-vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libipsec_ims_shr.so
 vendor/lib64/libverno.so
 vendor/lib64/libwo.so
 vendor/lib64/vendor.mediatek.hardware.clientapi@1.0.so
-vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor
 
 # Secure Element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
