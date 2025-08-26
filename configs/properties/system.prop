@@ -38,6 +38,11 @@ persist.device_config.runtime_native.usap_pool_enabled=false
 # Iorapd
 ro.iorapd.enable=false
 
+# IMS
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
 # IPO
 sys.ipo.disable=1
 
