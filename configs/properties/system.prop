@@ -50,6 +50,17 @@ sys.ipo.disable=1
 Build.BRAND=MTK
 ro.transsion.tranfs.path=/tranfs
 
+# Zygote
+ro.zygote.preload.enable=0
+
+# Kernel
+ro.kernel.zio=38,108,105,16
+
+# MTKPerf
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+
 # Partition
 ro.product.property_source_order=product,odm,vendor,system
 
