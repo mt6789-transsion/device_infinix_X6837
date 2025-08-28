@@ -349,9 +349,6 @@ ro.soc.model=MT6789V/CD
 ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_trustonic_tee_support=1
 
-# Thermal
-ro.vendor.mtk_thermal_2_0=1
-
 # WiFi
 ro.vendor.wifi.sap.concurrent.iface=ap1
 ro.vendor.wifi.sap.interface=ap0
