@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/infinix/X6837
-KERNEL_PATH := $(DEVICE_PATH)-kernel
+DEVICE_PATH := device/infinix/X6837NF
+KERNEL_PATH := device/infinix/X6837-kernel
 CONFIGS_PATH := $(DEVICE_PATH)/configs
 
 # Architecture
@@ -218,4 +218,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
 
 # Inherit the proprietary files
-include vendor/infinix/X6837/BoardConfigVendor.mk
+include vendor/infinix/X6837NF/BoardConfigVendor.mk
