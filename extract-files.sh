@@ -65,9 +65,9 @@ function blob_fixup() {
         vendor/lib*/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so|\
         vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service)
             [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
-            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v31.so" "${2}"
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v31.so" "${2}"
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v31.so" "${2}"
             ;;
         vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc)
             [ "$2" = "" ] && return 0
@@ -105,14 +105,14 @@ function blob_fixup() {
             ;;
         vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so)
             [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v31.so" "${2}"
             grep -q libcamera_metadata_shim.so "${2}" || "${PATCHELF}" --add-needed libcamera_metadata_shim.so "${2}"
             ;;
         vendor/bin/hw/mt6789/camerahalserver)
             [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-            "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
-            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v31.so" "${2}"
+            "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v31.so" "${2}"
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v31.so" "${2}"
             ;;
         system_ext/lib64/libsource.so)
             [ "$2" = "" ] && return 0
@@ -140,8 +140,8 @@ function blob_fixup() {
             ;;
         vendor/lib*/hw/audio.primary.mediatek.so)
             [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "libalsautils.so" "libalsautils-v32.so" "${2}"
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            "${PATCHELF}" --replace-needed "libalsautils.so" "libalsautils-v31.so" "${2}"
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v31.so" "${2}"
             "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             ;;
         *)

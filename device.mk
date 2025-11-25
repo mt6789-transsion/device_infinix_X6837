@@ -389,8 +389,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio@1.6.vendor \
-    libprotobuf-cpp-full.vendor \
-    libprotobuf-cpp-lite.vendor \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
 
@@ -452,9 +450,9 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_PACKAGES += \
     libstagefright_foundation-v33 \
-    libutils-v32 \
-    libhidlbase-v32 \
-    libbinder-v32
+    libutils-v31 \
+    libhidlbase-v31 \
+    libbinder-v31
 
 PRODUCT_PACKAGES += \
     libunwindstack.vendor \
