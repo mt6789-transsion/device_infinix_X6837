@@ -1,8 +1,11 @@
-# Camera
+# Fingerprint (Fpsensor)
+type fp_ext_svc2_hwservice, hwservice_manager_type;
+
+# Fingerprint (Goodix)
+type goodix_fingerprint_service, service_manager_type, hwservice_manager_type;
+
+# TNE
+type hal_tnev_hwservice, hwservice_manager_type;
+
+# Trancam
 type hal_trancamserver_hwservice, hwservice_manager_type;
-
-# FPSensor
-type fp_ext_svc2_service, hwservice_manager_type;
-
-# NXP NFC
-type nxpnfc_hwservice, hwservice_manager_type;

@@ -1,1 +1,0 @@
-dontaudit netdagent self:udp_socket create_socket_perms;

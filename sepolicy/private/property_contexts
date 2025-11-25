@@ -1,8 +1,22 @@
-# Fingerprint
-gf.debug.                                   u:object_r:vendor_fingerprint_prop:s0
+# Camera
+cam.egnsavefile.enable              u:object_r:exported_system_prop:s0
+debuglog.drv                        u:object_r:exported_system_prop:s0
+debuglog.drv.                       u:object_r:exported_system_prop:s0
+jpeg.exif.icc.profile               u:object_r:exported_system_prop:s0
+st_repair.debug.                    u:object_r:exported_system_prop:s0
+st.superresloution.gpu.level        u:object_r:exported_system_prop:s0
+ro.mtk_cam_dualzoom_support         u:object_r:system_mtk_camera_prop:s0
+ro.mtk_cam_stereo_camera_support    u:object_r:system_mtk_camera_prop:s0
+RUNTIME_OVERRIDE_LOG_LEVEL          u:object_r:exported_system_prop:s0
+RUNTIME_OVERRIDE_OPENCL_MEM_TYPE    u:object_r:exported_system_prop:s0
 
-# Hardware
-ro.hardware.chipname                        u:object_r:exported_default_prop:s0
+# Fingerprint (Goodix)
+gf.debug.fp_vendor                  u:object_r:system_goodix_prop:s0
+gf.debug.fp_model                   u:object_r:system_goodix_prop:s0
+gf.debug.fp_serial                  u:object_r:system_goodix_prop:s0
+
+# NFC
+persist.nfc_cfg.config_file_name   u:object_r:system_nfc_prop:s0
 
 # SVN
-ro.product.svn                              u:object_r:build_prop:s0
+ro.product.svn                      u:object_r:build_prop:s0

@@ -1,3 +1,1 @@
-allow cameraserver dmabuf_system_heap_device:chr_file { ioctl read getattr lock map open watch watch_reads };
-
-get_prop(cameraserver, vendor_camera_prop)
+allow cameraserver { sysfs_sub_torch_file sysfs_torch_file sysfs_tele_torch_file sysfs_wide_torch_file }:file rw_file_perms;

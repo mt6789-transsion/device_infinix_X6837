@@ -1,1 +1,1 @@
-dontaudit em_app mtk_hal_nvramagent_hwservice:hwservice_manager find;
+hal_client_domain(em_app, hal_mtk_nvramagent)
