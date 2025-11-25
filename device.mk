@@ -198,9 +198,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.mt6789 \
     fstab.mt6789.vendor_ramdisk \
-    init_connectivity.rc \
-    init.aee.rc \
-    init.connectivity.common.rc \
     init.connectivity.rc \
     init.insmod.sh \
     init.insmod.mt6789.cfg \
@@ -212,7 +209,6 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.recovery.usb.rc \
     init.sensor_2_0.rc \
-    init.transsion.rc \
     ueventd.mt6789.rc
 
 # IMS

@@ -5,13 +5,6 @@
 //
 
 prebuilt_etc {
-    name: "init_connectivity.rc",
-    src: "etc/init/hw/init_connectivity.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
     name: "fstab.mt6789",
     src: "etc/fstab.mt6789",
     vendor: true,
@@ -19,22 +12,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.aee.rc",
-    src: "etc/init/hw/init.aee.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
     name: "init.mt6789.power.rc",
     src: "etc/init/hw/init.mt6789.power.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "init.connectivity.common.rc",
-    src: "etc/init/hw/init.connectivity.common.rc",
     sub_dir: "init/hw",
     vendor: true
 }
@@ -97,13 +76,6 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.sensor_2_0.rc",
     src: "etc/init/hw/init.sensor_2_0.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "init.transsion.rc",
-    src: "etc/init/hw/init.transsion.rc",
     sub_dir: "init/hw",
     vendor: true
 }

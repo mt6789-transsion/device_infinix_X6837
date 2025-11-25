@@ -1,44 +1,15 @@
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6789.usb.rc
 import /vendor/etc/init/hw/init.project.rc
-import /vendor/etc/init/hw/init.aee.rc
 import /vendor/etc/init/hw/init.sensor_2_0.rc
 import /vendor/etc/init/hw/init.mt6789.power.rc
-import /vendor/etc/init/hw/init.transsion.rc
 import /vendor/etc/init/hw/init.modem.rc
 
 on early-init
-    write /proc/bootprof "INIT:early-init"
-
     # initialize vendor.all.modules.ready to 1 here to prevent NOT GKI project blocked
     setprop vendor.all.modules.ready 1
 
-# Keep debugfs mounted in non-user builds
-on early-init && property:ro.build.type=eng
-    mount debugfs debugfs /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
-    setprop persist.dbg.keep_debugfs_mounted true
-
-on early-init && property:ro.build.type=userdebug
-    mount debugfs debugfs /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
-    setprop persist.dbg.keep_debugfs_mounted true
-
 on init
-    write /proc/bootprof "INIT:init"
-
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-
-    # if primary storage is physical, set ro.vold.primary_physical to 1
-    # setprop ro.vold.primary_physical 1
-
-    mkdir /mnt/cd-rom 0000 system system
-
-#MD:add XLQYXLQS-5252 for tranfs by xiaoxiang.xiong 20220404 start
-mkdir /tranfs 0771 system system
-#MD:add XLQYXLQS-5252 for tranfs by xiaoxiang.xiong 20220404 end
-
 # change lk_env permission
     chown root system /proc/lk_env
     chmod 0660 /proc/lk_env
@@ -48,7 +19,6 @@ mkdir /tranfs 0771 system system
     write /proc/sys/net/core/rmem_max 8388608
 
 on late-init
-    write /proc/bootprof "INIT:late-init"
 # enable rcu_expedited
     write /sys/kernel/rcu_expedited 1
 
@@ -88,61 +58,15 @@ on property:init.svc.vendor.charger=running
     write /sys/class/leds/lcd-backlight/brightness "1000"
     write /sys/class/leds/lcd-backlight/trigger "backlight"
 
-    # Stop bootprof
-    write /proc/bootprof "0"
-
-on early-fs
-    write /proc/bootprof "INIT:early-fs"
-
 on fs
-    write /proc/bootprof "INIT:fs"
-    start vendor.boot-hal-1-2
-
     # mount fstab
-    write /proc/bootprof "INIT:Mount_START"
-    write /sys/kernel/tracing/trace_marker "B|1|Mount"
     mount_all --early
-    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/by-name/userdata
-    write /sys/kernel/tracing/trace_marker "E"
-    write /proc/bootprof "INIT:Mount_END"
 
 on late-fs
-    write /proc/bootprof "INIT:late-fs"
-    wait_for_prop hwservicemanager.ready "true"
-
-    write /proc/bootprof "INIT:Mount_START --late"
-    write /sys/kernel/tracing/trace_marker "B|1|Mount late"
     mount_all --late
-    write /sys/kernel/tracing/trace_marker "E"
-    write /proc/bootprof "INIT:Mount_END --late"
-
 
 on post-fs
-    write /proc/bootprof "INIT:post-fs"
-
-    # Support legacy paths
-    symlink /sdcard /storage/sdcard0
-
-    #change permissions for mediaserver
-    chown root media /proc/clkmgr/mipi_test
-
-    #change permission for engineer mode
-    chown radio system /proc/clkmgr/pll_test
-    chown radio system /proc/clkmgr/pll_fsel
-    chmod 0664 /proc/clkmgr/pll_test
-    chmod 0664 /proc/clkmgr/pll_fsel
-    #change permission for engineer mode
-    chown radio system /proc/freqhopping/dramc
-    chown radio system /proc/freqhopping/dumpregs
-    chown radio system /proc/freqhopping/freqhopping_debug
-    chown radio system /proc/freqhopping/status
-    chown radio system /proc/freqhopping/userdef
-
-# change owner
-    chown system system /proc/bootprof
-    chmod 0664 /proc/bootprof
-    chown root system /proc/mtprof/cputime
-    chown root system /proc/mtprof/reboot_pid
+    mkdir /mnt/vendor/persist/sensors 0755 system system
 
     chown system system /mnt/vendor/protect_f
     chmod 0770 /mnt/vendor/protect_f
@@ -151,37 +75,11 @@ on post-fs
     chmod 0770 /mnt/vendor/protect_s
     chown root log /proc/ccci_sib
 
-    # allow ccci_mdinit access ccci_dump
-    chown root system /proc/ccci_dump
-
-    #STD:add ffu upgrade KFLJHLEYB-2005 by xiaoxiang.xiong 20221017 start
-    restorecon_recursive /tranfs
-    mkdir /tranfs/ffu 0700 system shell
-    chmod 0777 /tranfs/ffu
-    #STD:add ffu upgrade KFLJHLEYB-2005 by xiaoxiang.xiong 20221017 end
-
-    #STD:add XLLWCHLYEL-738 kfp by hao.lv5 20220907 start
-    restorecon_recursive /tranfs
-    mkdir /tranfs/tranf2fs 0700 root shell
-    chmod 0771 /tranfs/tranf2fs
-    mkdir /tranfs/tranf2fs/kfp 0700 root shell
-    chmod 0771 /tranfs/tranf2fs/kfp
-    #STD:add XLLWCHLYEL-738 kfp by hao.lv5 20220907 end
-
 on post-fs-data
-    write /proc/bootprof "INIT:post-fs-data"
     wait_for_prop vendor.all.modules.ready 1
-    write /proc/bootprof "modprobe: Load_Module_DONE"
 
     # Disable watermark boost
     write /proc/sys/vm/watermark_boost_factor 0
-
-    # zram
-    write /sys/block/zram0/comp_algorithm lz4
-    write /proc/sys/vm/page-cluster 0
-    write /proc/sys/vm/swappiness 60
-    write /sys/kernel/mm/swap/vma_ra_enabled false
-    swapon_all /vendor/etc/fstab.mt6789
 
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
@@ -203,11 +101,6 @@ on post-fs-data
     chown system system /mnt/vendor/nvcfg/fg
     chown system system /mnt/vendor/nvcfg/fg/old_fg_data
     chown system system /mnt/vendor/nvcfg/fg/car_tune_value
-
-#MD:add XLQYXLQS-5252 for tranfs by xiaoxiang.xiong 20220404 start
-    chown system system /tranfs
-    chmod 0777 /tranfs
-#MD:add XLQYXLQS-5252 for tranfs by xiaoxiang.xiong 20220404 end
 
     # create basic filesystem structure
     # We chown/chmod /mnt/vendor/nvdata again so because mount is run as root + defaults
@@ -255,10 +148,6 @@ on post-fs-data
     chown root root /sys/class/sensordrv/tran_imgsensor/tran_imgsensor_sn
     chmod 0666 /sys/class/sensordrv/tran_imgsensor/tran_imgsensor_sn
 #ITD:modify for cam SN bind by huihang.zhou 20230302 end
-
-#MD:add XLQYXLQS-5252 for tranfs by xiaoxiang.xiong 20220404 start
-    restorecon_recursive /tranfs
-#MD:add XLQYXLQS-5252 for tranfs by xiaoxiang.xiong 20220404 end
 
     # Set SELinux security contexts on upgrade or policy update.
     restorecon_recursive /mnt/vendor/nvdata
@@ -741,19 +630,11 @@ on post-fs-data
 	#widevine driver node
 	chmod 0660 /dev/drm_wv
 	chown media system /dev/drm_wv
-	
-# End of adding by MTK drivers
-# -----------------------
-on zygote-start
-    write /proc/bootprof "INIT:zygote-start"
 
 on early-boot
-    write /proc/bootprof "INIT:early-boot"
     verity_update_state
 
 on boot
-    write /proc/bootprof "INIT:boot"
-
     write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
 
@@ -989,9 +870,6 @@ on property:sys.boot_completed=1
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1 -1 -1"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
 
-    # stop bootprof
-    write /proc/bootprof 0
-
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
     write /dev/gauge/FG_daemon_disable 1
@@ -1005,71 +883,10 @@ on property:persist.vendor.mediatek.fg.force25c=0
 on property:persist.vendor.mediatek.fg.log.enable=1
     write /dev/gauge/FG_daemon_log_level 7
 
-# add meta_tst for ATM
-service meta_tst /vendor/bin/meta_tst
-    class core
-    user root
-    group radio gps system wifi audio bluetooth media
-    capabilities NET_RAW NET_ADMIN
-    socket meta-atci stream 660 radio system
-    disabled
-    oneshot
-
-service factory_no_image /vendor/bin/factory
-    user root
-    group radio system wifi media gps audio bluetooth wakelock nfc
-    capabilities BLOCK_SUSPEND NET_RAW NET_ADMIN SYS_ADMIN SYS_BOOT
-    socket factory-atci stream 660 radio system
-    disabled
-    oneshot	
-
-# start meta_tst for ATM
-on property:sys.boot_completed=1 && property:ro.boot.atm=enable
-    start meta_tst
-    start loghidlvendorservice
-    start loghidlsysservice
-
-# reset mdmode when modem crash happens in ATM
-on property:vendor.mtk.md1.status=reset
-    setprop persist.vendor.atm.mdmode normal
-
-on property:sys.boot_completed=1
-    restart android-hardware-media-c2-hal-1-2
-
 # MTK fast charging support
 on property:persist.vendor.mediatek.fast_charging.support=*
     write /sys/devices/platform/charger/fast_chg_indicator ${persist.vendor.mediatek.fast_charging.support}
 
-# FPSGO FBT Game
-on boot
-    insmod /vendor/lib/modules/fpsgo.ko
-
-#SPD: add for watermark_scale_factor at 20230302 start
-on property:sys.boot_completed=1
-    write /sys/devices/platform/odm/odm:tran_battery/OTG_CTL 1
-    write /proc/sys/vm/watermark_scale_factor 10
-    setprop vendor.tran.cur_max_process 72
-#SPD: add for watermark_scale_factor at 20230302 end
-
 # Stop Serial Console
 on boot
     stop console
-
-service vendor.gralloc-4-0 /vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
-    class hal animation
-    interface android.hardware.graphics.allocator@4.0::IAllocator default
-    user system
-    group graphics drmrpc
-    capabilities SYS_NICE
-    onrestart restart surfaceflinger
-    task_profiles ProcessCapacityHigh HighPerformance
-    override
-
-service vendor.hwcomposer-2-3 /vendor/bin/hw/android.hardware.graphics.composer@2.3-service
-    class hal animation
-    user system
-    group graphics drmrpc
-    capabilities SYS_NICE
-    onrestart restart surfaceflinger
-    task_profiles ProcessCapacityHigh HighPerformance
-    override
