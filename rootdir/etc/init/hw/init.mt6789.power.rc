@@ -1,115 +1,185 @@
-on early-init
-    # boot perf. tune
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 2000000
-    write /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq 2200000
-    write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 5500000000
-
-on property:init.svc.vendor.charger=running
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 0
-    write /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq 0
-    write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 0
-    
-    # Keep one LITTLE and one big
-    write /sys/devices/system/cpu/cpu1/online 0
-    write /sys/devices/system/cpu/cpu2/online 0
-    write /sys/devices/system/cpu/cpu3/online 0
-    write /sys/devices/system/cpu/cpu4/online 0
-    write /sys/devices/system/cpu/cpu5/online 0
-    write /sys/devices/system/cpu/cpu7/online 0
-
 on init
-    # update cpus for cpuset cgroup
-    write /dev/cpuset/foreground/cpus 0-3,4-5
-    write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/camera-daemon/cpus 0-7
+    # Setup final cpuset
+    write /dev/cpuset/foreground/cpus 0-6
+    write /dev/cpuset/foreground_window/cpus 0-6
+    write /dev/cpuset/background/cpus 1-3
+    write /dev/cpuset/system-background/cpus 1-5
     write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/restricted/cpus 0-3
 
-on post-fs-data
-    # Disable watermark boost
-    write /proc/sys/vm/watermark_boost_factor 0
+    setprop dalvik.vm.dex2oat-cpu-set 4,5,6,7
+    setprop dalvik.vm.dex2oat-threads 4
+    setprop dalvik.vm.image-dex2oat-cpu-set 4,5,6,7
+    setprop dalvik.vm.image-dex2oat-threads 4
 
-    # zram
-    write /proc/sys/vm/page-cluster 3
-    write /proc/sys/vm/swappiness 60
-    write /sys/kernel/mm/swap/vma_ra_enabled true
-    write /sys/block/zram0/comp_algorithm lz4
-    swapon_all /vendor/etc/fstab.mt6789
+    # VM Tweaks
+    write /proc/sys/vm/dirty_writeback_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10
+    write /proc/sys/vm/dirty_ratio 15
+    write /proc/sys/vm/dirty_expire_centisecs 3000
 
-    # boot time fs tune
-    write /sys/devices/platform/soc/11270000.ufshci/clkgate_enable 0
-    write /sys/block/mmcblk0/queue/iostats 0
-    write /sys/block/mmcblk0/queue/nr_requests 256
-    write /sys/block/sdc/queue/iostats 0
-    write /sys/block/sdc/queue/nr_requests 256
+    # Boot time tuning
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
+    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "performance"
 
+    write /dev/sys/fs/by-name/userdata/iostat_enable 0
+    write /dev/sys/fs/by-name/userdata/cp_interval 6000
+    write /dev/sys/fs/by-name/userdata/gc_urgent_sleep_time 200
+
+    # Disable printk logging
+    write /proc/sys/kernel/printk_devkmsg off
+
+    # Sched tuning
+    write /proc/sys/kernel/sched_migration_cost_ns 750000
+    write /proc/sys/kernel/sched_latency_ns 8000000
+    write /proc/sys/kernel/sched_min_granularity_ns 1500000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 1200000
+
+## Utilization Clamping
+    # Tuning
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
+    write /proc/sys/kernel/sched_util_clamp_min 64
 
-    # boot perf. tune
-    write /dev/cpuctl/system/cpu.uclamp.min 100
-    write /dev/cpuctl/system/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/system-background/cpu.uclamp.min 100
-    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground/cpu.uclamp.min 100
-    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/top-app/cpu.uclamp.min 100
-    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/background/cpu.uclamp.min 100
-    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 1
+    # Real-Time tasks
+    write /dev/cpuctl/rt/cpu.uclamp.min 0
+    write /dev/cpuctl/rt/cpu.uclamp.max max
+    write /dev/cpuctl/rt/cpu.shares 20480
+    write /dev/cpuctl/rt/cpu.uclamp.latency_sensitive 1
 
-on property:sys.boot_completed=1
-    setprop vendor.powerhal.init 1
-
-    # end boot time fs tune
-    write /sys/devices/platform/soc/11270000.ufshci/clkgate_enable 1
-    write /sys/block/mmcblk0/queue/iostats 1
-    write /sys/block/mmcblk0/queue/nr_requests 128
-    write /sys/block/sdc/queue/iostats 1
-    write /sys/block/sdc/queue/nr_requests 128
-
-    # restore boot perf. tune
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 0
-    write /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq 0
-    write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 0
-
-    # system-background
-    # cap the max utilisation for system-background tasks to save power.
-    write /dev/cpuctl/system-background/cpu.uclamp.max 40
-    write /dev/cpuctl/system-background/cpu.uclamp.min 0
-    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
-
-    # foreground
-    # cap the max utilisation for foreground tasks to save power.
-    write /dev/cpuctl/foreground/cpu.uclamp.max max
-    write /dev/cpuctl/foreground/cpu.uclamp.min 0
-    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 0
-
-    # top-app
-    write /dev/cpuctl/top-app/cpu.uclamp.max max
-    write /dev/cpuctl/top-app/cpu.uclamp.min 0
-    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-
-    # background
-    # cap the max utilisation for background tasks to save power.
-    write /dev/cpuctl/background/cpu.uclamp.max 50
+    # Global Background tasks for best efficiency
     write /dev/cpuctl/background/cpu.uclamp.min 0
+    write /dev/cpuctl/background/cpu.uclamp.max 65
+    write /dev/cpuctl/background/cpu.shares 1024
     write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
 
-    # nnapi-hal
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.max max
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.min 75
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.latency_sensitive 1
+    # System Background tasks for best efficiency
+    write /dev/cpuctl/system-background/cpu.uclamp.min 0
+    write /dev/cpuctl/system-background/cpu.uclamp.max 80
+    write /dev/cpuctl/system-background/cpu.shares 2048
+    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
 
-    # camera-daemon
+    # Camera daemon tasks
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 128
     write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 0
+    write /dev/cpuctl/camera-daemon/cpu.shares 20480
     write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
 
-    write /proc/sys/kernel/sched_migration_cost_ns 200000
+    # dex2oat tasks
+    write /dev/cpuctl/dex2oat/cpu.uclamp.min 0
+    write /dev/cpuctl/dex2oat/cpu.uclamp.max 90
+    write /dev/cpuctl/dex2oat/cpu.shares 2048
+    write /dev/cpuctl/dex2oat/cpu.uclamp.latency_sensitive 0
 
-    # Uclamp tuning
+    # Foreground tasks
+    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/foreground/cpu.uclamp.max max
+    write /dev/cpuctl/foreground/cpu.shares 10240
+
+    # Foreground window tasks
+    write /dev/cpuctl/foreground_window/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/foreground_window/cpu.uclamp.min 96
+    write /dev/cpuctl/foreground_window/cpu.uclamp.max max
+    write /dev/cpuctl/foreground_window/cpu.shares 12288
+
+    # NeuralNetwork API HAL tasks
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp.max max
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp.min 90
+    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
+
+    # Top app tasks
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/top-app/cpu.uclamp.max max
+    write /dev/cpuctl/top-app/cpu.uclamp.min 128
+    write /dev/cpuctl/top-app/cpu.shares 20480
+
+on property:sys.boot_completed=1
+    # PowerHAL Hint Processing
+    setprop vendor.powerhal.init 1
+
+    # Adjust watermark level
+    write /proc/sys/vm/watermark_scale_factor 120
+
+    # End boot time tuning
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq 2000000
+    write /sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq 2200000
+
+    # Custom Schedutil rate limits
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 10000
+    write /sys/devices/system/cpu/cpufreq/policy6/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy6/schedutil/down_rate_limit_us 10000
+
+    # Sched tuning
+    write /proc/sys/kernel/sched_latency_ns 8000000
+    write /proc/sys/kernel/sched_min_granularity_ns 1500000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 1200000
+    write /proc/sys/kernel/sched_migration_cost_ns 750000
+
+## Utilization Clamping
+    # Tuning
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
-    write /proc/sys/kernel/sched_util_clamp_min 128
+    write /proc/sys/kernel/sched_util_clamp_min 64
+
+    # Real-Time tasks
+    write /dev/cpuctl/rt/cpu.uclamp.min 0
+    write /dev/cpuctl/rt/cpu.uclamp.max max
+    write /dev/cpuctl/rt/cpu.shares 20480
+    write /dev/cpuctl/rt/cpu.uclamp.latency_sensitive 1
+
+    # Global Background tasks for best efficiency
+    write /dev/cpuctl/background/cpu.uclamp.min 0
+    write /dev/cpuctl/background/cpu.uclamp.max 65
+    write /dev/cpuctl/background/cpu.shares 1024
+    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
+
+    # System Background tasks for best efficiency
+    write /dev/cpuctl/system-background/cpu.uclamp.min 0
+    write /dev/cpuctl/system-background/cpu.uclamp.max 80
+    write /dev/cpuctl/system-background/cpu.shares 2048
+    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
+
+    # Camera daemon tasks
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 128
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
+    write /dev/cpuctl/camera-daemon/cpu.shares 20480
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
+
+    # dex2oat tasks
+    write /dev/cpuctl/dex2oat/cpu.uclamp.min 0
+    write /dev/cpuctl/dex2oat/cpu.uclamp.max 90
+    write /dev/cpuctl/dex2oat/cpu.shares 2048
+    write /dev/cpuctl/dex2oat/cpu.uclamp.latency_sensitive 0
+
+    # Foreground tasks
+    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/foreground/cpu.uclamp.max max
+    write /dev/cpuctl/foreground/cpu.shares 10240
+
+    # Foreground window tasks
+    write /dev/cpuctl/foreground_window/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/foreground_window/cpu.uclamp.min 96
+    write /dev/cpuctl/foreground_window/cpu.uclamp.max max
+    write /dev/cpuctl/foreground_window/cpu.shares 12288
+
+    # NeuralNetwork API HAL tasks
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp.max max
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp.min 90
+    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
+
+    # Top app tasks
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/top-app/cpu.uclamp.max max
+    write /dev/cpuctl/top-app/cpu.uclamp.min 128
+    write /dev/cpuctl/top-app/cpu.shares 20480
+
+    # DVFS
+    write /sys/kernel/ged/hal/dvfs_margin_value 130
+    write /sys/kernel/ged/hal/timer_base_dvfs_margin 798
+    write /sys/kernel/ged/hal/loading_base_dvfs_step 4
 
 service vendor.hwcomposer-2-3 /vendor/bin/hw/android.hardware.graphics.composer@2.3-service
     class hal animation
