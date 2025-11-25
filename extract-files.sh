@@ -130,6 +130,20 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i 's/1.1/1.2/' "$2"
             ;;
+        vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc)
+            [ "$2" = "" ] && return 0
+            sed -i '/vts/Q' "$2"
+            ;;
+        vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc)
+            [ "$2" = "" ] && return 0
+            sed -i 's/start/enable/' "$2"
+            ;;
+        vendor/lib*/hw/audio.primary.mediatek.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "libalsautils.so" "libalsautils-v32.so" "${2}"
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
+            ;;
         *)
             return 1
             ;;
