@@ -249,7 +249,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.transsion
+    android.hardware.light-service.lineage
 
 # Lineage-Specific Overlays
 PRODUCT_PACKAGES += \
@@ -432,8 +432,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek/libmtkperf_client \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/transsion
+    hardware/google/pixel
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -442,20 +441,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.transsion
-
 # USB
 $(call soong_config_set,android_hardware_mediatek_usb,audio_accessory_supported,true)
 
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \
     android.hardware.usb.gadget-service.mediatek
-    
-# Vendor service manager
-PRODUCT_PACKAGES += \
-    vndservicemanager
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -478,8 +469,8 @@ PRODUCT_PACKAGES += \
 
 # vndservice
 PRODUCT_PACKAGES += \
-   vndservicemanager \
-   vndservice
+    vndservicemanager \
+    vndservice
     
 # Wi-Fi
 PRODUCT_PACKAGES += \
