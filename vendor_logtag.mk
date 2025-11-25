@@ -272,4 +272,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.log.tag.TcUtils=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.VT=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.VoLTE=$(VENDOR_LOG_LEVEL) \
-    persist.log.tag.wlan_assistant=$(VENDOR_LOG_LEVEL)
+    persist.log.tag.wlan_assistant=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.thermal_src=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.VPUD=$(VENDOR_LOG_LEVEL)

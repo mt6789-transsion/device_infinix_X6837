@@ -273,6 +273,10 @@ telephony.active_modems.max_count=2
 ro.vendor.init.sensor.rc=init.sensor_2_0.rc
 ro.vendor.mtk.sensor.support=yes
 
+# SOC Props
+ro.soc.manufacturer=Mediatek
+ro.soc.model=MT8781V/NA
+
 # Surfaceflinger
 debug.sf.late.app.duration=16600000
 debug.sf.late.sf.duration=10500000
@@ -309,15 +313,9 @@ ro.vendor.mtk_emmc_support=1
 ro.vendor.mtk_f2fs_enable=1
 ro.vendor.mtk_ufs_support=1
 
-# SOC
-ro.soc.manufacturer=Mediatek
-
 # TEE
 ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_trustonic_tee_support=1
-
-# Thermal
-ro.vendor.mtk_thermal_2_0=1
 
 # WiFi
 ro.vendor.wifi.sap.concurrent.iface=ap1
