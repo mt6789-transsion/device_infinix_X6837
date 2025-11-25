@@ -1,7 +1,9 @@
 # Charging
+genfscon sysfs /devices/platform/odm/odm:usb_switch/power_supply/usb_switch                          u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/mtk_ctd/power_supply                          u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/odm/odm:tran_auto_test/power_supply           u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/odm/odm:usb_switch/power_supply               u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt6358-chrdet/power_supply u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/soc/11015000.i2c/i2c-3/3-006f/power_supply    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/soc/11017000.i2c/i2c-5/5-0053/power_supply    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/soc/11017000.i2c/i2c-5/5-006f/power_supply    u:object_r:sysfs_batteryinfo:s0
@@ -29,6 +31,27 @@ genfscon sysfs /devices/virtual/torch/torch/torch_level                   u:obje
 genfscon sysfs /devices/virtual/wide_torch/wide_torch/wide_torch_level    u:object_r:sysfs_wide_torch_file:s0
 
 # Wakeup (https://lkml.org/lkml/2019/8/6/1275)
+genfscon sysfs /devices/platform/charger/power_supply/mtk-slv-div-chg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/extcon_usb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/mtk_ctd/power_supply/mtk_charger_type/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:tran_auto_test/power_supply/tran-auto-test/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:usb_switch/power_supply/usb_switch/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/pe5/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt6358-gauge/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt6358-gauge/power_supply/mtk-gauge/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt6358-rtc/rtc/rtc0/alarmtimer.1.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt6358-rtc/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt635x-auxadc/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10228000.gce/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1100a000.spi0/spi_master/spi0/spi0.0/input/input2/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11015000.i2c/i2c-3/3-0028/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1101a000.i2c/i2c-6/6-004e/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1101a000.i2c/i2c-6/6-006b/power_supply/charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11eb3000.i2c/i2c-9/9-0054/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/15020000.imgsys_config/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/18002000.consys/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1f000000.mdp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/trusty/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10026000.pwrap/10026000.pwrap:mt6359p/mt6359p-rtc/rtc/rtc0/alarmtimer.0.auto/wakeup      u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/1a000000.camisp_legacy/wakeup                                                            u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/charger/power_supply/mtk-mst-div-chg/wakeup                                              u:object_r:sysfs_wakeup:s0
