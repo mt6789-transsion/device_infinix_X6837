@@ -312,7 +312,7 @@ ro.surface_flinger.wcg_composition_dataspace=143261696
 
 # SoC
 ro.soc.manufacturer=Mediatek
-ro.soc.model=MT6789V/CD
+ro.soc.model=MediaTek Helio G99
 
 # TEE
 ro.vendor.mtk_tee_gp_support=1
